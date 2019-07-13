@@ -107,3 +107,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh
 alias ntx='cd ~/Sync/notes/'
+alias tm="tmux attach || tmux new"
