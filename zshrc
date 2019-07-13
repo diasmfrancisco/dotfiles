@@ -106,5 +106,20 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh
+
+# Alias for switching to notes directory
 alias ntx='cd ~/Sync/notes/'
+
+# Alias for tmux attach or new, depends
 alias tm="tmux attach || tmux new"
+
+# Alias for add and commit
+alias gac="git add . && git commit -m" # + commit message
+
+# Pushing/pulling to origin remote
+alias gpo="git push origin" # + branch name
+alias glo="git pull origin" # + branch name
+
+# Pushing/pulling to origin remote, master branch
+alias gpom="git push origin master"
+alias glom="git pull origin master"
