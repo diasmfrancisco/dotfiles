@@ -126,3 +126,6 @@ alias glom="git pull origin master"
 
 # Git reset --hard
 alias grhh="git reset --hard"
+
+# Alias for initialization
+alias gi="git init && gac 'Initial commit'"
