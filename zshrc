@@ -123,3 +123,6 @@ alias glo="git pull origin" # + branch name
 # Pushing/pulling to origin remote, master branch
 alias gpom="git push origin master"
 alias glom="git pull origin master"
+
+# Git reset --hard
+alias grhh="git reset --hard"
