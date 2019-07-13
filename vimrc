@@ -243,21 +243,10 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-""""""""""""""""""""""""""
-" Split
-
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-set splitbelow
-set splitright
 
 """"""""""""""""""""""""""
 " fzf
-
-
+nnoremap <Leader>f :FZF<Enter>
 
 """"""""""""""""""""""""""
 " md image paste
@@ -301,9 +290,9 @@ let g:tex_conceal='abdmg'
 "     endif
 " endfunction
 
+"""""""""""""""""""
 " NERDtree
-
-nnoremap <Leader>f :NERDTreeToggle<Enter>
+nnoremap <Leader>n :NERDTreeToggle<Enter>
 let NERDTreeQuitOnOpen = 1
 
 " automatically close if NERDtree is only left standing
