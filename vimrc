@@ -85,6 +85,7 @@ Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'lervag/vimtex'
 
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -300,4 +301,10 @@ let g:tex_conceal='abdmg'
 "     endif
 " endfunction
 
+" NERDtree
 
+nnoremap <Leader>f :NERDTreeToggle<Enter>
+let NERDTreeQuitOnOpen = 1
+
+" automatically close if NERDtree is only left standing
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
