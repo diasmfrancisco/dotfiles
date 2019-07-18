@@ -109,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Alias for switching to notes directory
 alias ntx='cd ~/Sync/notes/'
+alias gtype='gnu-typist'
 
 # Alias for tmux attach or new, depends
 alias tm="tmux attach || tmux new"
