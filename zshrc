@@ -130,3 +130,7 @@ alias grhh="git reset --hard"
 
 # Alias for initialization
 alias gi="git init && gac 'Initial commit'"
+
+# Alias for creating and killing tmux session with specific name
+alias tmn="tmux new -s" # + new session name
+alias tmk="tmux kill-session -t" # + new session name
