@@ -112,13 +112,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh
 
+
+######################################################################
+######################################################################
+# Aliases
+
 # Alias for switching to notes directory
 alias ntx='cd ~/Sync/notes/'
-alias gtype='gnu-typist'
 
-# Alias for tmux attach or new, depends
-alias tm="tmux attach || tmux new"
-
+# Git aliases
 # Alias for add and commit
 alias gac="git add . && git commit -m" # + commit message
 
@@ -136,6 +138,12 @@ alias grhh="git reset --hard"
 # Alias for initialization
 alias gi="git init && gac 'Initial commit'"
 
+
+# Tmux aliases
+# Alias for tmux attach or new, depends
+alias tm="tmux attach || tmux new"
+
 # Alias for creating and killing tmux session with specific name
 alias tmn="tmux new -s" # + new session name
 alias tmk="tmux kill-session -t" # + new session name
+alias tma="tmux a -t mysession" # + session name
