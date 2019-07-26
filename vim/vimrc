@@ -6,8 +6,8 @@ set background=dark
 set nocompatible
 
 " enable syntax and plugins for newtr
-syntax enable
 filetype plugin on
+syntax enable
 
 " FINDING FILES
 set path+=**      " Provides tab-completion  for all file-related tabs

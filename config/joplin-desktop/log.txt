@@ -1,0 +1,119 @@
+2019-03-02 12:35:39: "Profile directory: /Users/fmcdg/.config/joplin-desktop"
+2019-03-02 12:35:39: "First start: detected locale as en_GB"
+2019-03-02 12:35:39: "Trying to load 0 master keys..."
+2019-03-02 12:35:39: "Loaded master keys: 0"
+2019-03-02 12:35:39: "ResourceFetcher: Auto-added resources: 0"
+2019-03-02 12:35:39: "Trying to load 0 master keys..."
+2019-03-02 12:35:39: "Loaded master keys: 0"
+2019-03-02 12:35:39: "Scheduling sync operation..."
+2019-03-02 12:35:39: "Scheduling sync operation..."
+2019-03-02 12:35:40: "DecryptionWorker: starting decryption..."
+2019-03-02 12:35:40: "DecryptionWorker: completed decryption."
+2019-03-02 12:35:49: "Preparing scheduled sync"
+2019-03-02 12:35:49: "Saving updated Dropbox auth."
+2019-03-02 12:35:49: "Synchroniser is missing credentials - manual sync required to authenticate."
+2019-03-02 12:35:49: "Updating all notifications..."
+2019-03-02 12:35:49: "Garbage collecting alarms..."
+2019-03-02 12:35:50: "DecryptionWorker: starting decryption..."
+2019-03-02 12:35:50: "DecryptionWorker: completed decryption."
+2019-03-02 12:36:09: "ResourceService::indexNoteResources: Start"
+2019-03-02 12:36:09: "ResourceService::indexNoteResources: Completed"
+2019-03-02 12:36:09: "ResourceService::deleteOrphanResources:", "[]"
+2019-03-02 12:36:43: "Saving updated Dropbox auth."
+2019-03-02 12:36:46: "Scheduling sync operation..."
+2019-03-02 12:36:56: "Preparing scheduled sync"
+2019-03-02 12:36:56: "Starting scheduled sync"
+2019-03-02 12:36:58: "Operations completed: "
+2019-03-02 12:36:58: "fetchingTotal: 2"
+2019-03-02 12:36:58: "Total folders: 0"
+2019-03-02 12:36:58: "Total notes: 0"
+2019-03-02 12:36:58: "Total resources: 0"
+2019-03-02 12:37:46: "Saving updated OneDrive auth."
+2019-03-02 12:37:46: "Scheduling sync operation..."
+2019-03-02 12:37:46: "Preparing scheduled sync"
+2019-03-02 12:37:47: "Could not run background sync:"
+2019-03-02 12:37:47: "Error: The caller does not have permission to perform the action.
+Code: accessDenied
+Header: {"_headers":{"cache-control":["private"],"transfer-encoding":["chunked"],"content-type":["application/json"],"request-id":["baf7305a-a42b-4da4-b176-a0b58f1e0252"],"client-request-id":["baf7305a-a42b-4da4-b176-a0b58f1e0252"],"x-ms-ags-diagnostic":["{\"ServerInfo\":{\"DataCenter\":\"North Europe\",\"Slice\":\"SliceC\",\"Ring\":\"3\",\"ScaleUnit\":\"001\",\"RoleInstance\":\"AGSFE_IN_29\",\"ADSiteName\":\"NEU\"}}"],"duration":["223.8488"],"strict-transport-security":["max-age=31536000"],"date":["Sat, 02 Mar 2019 12:37:46 GMT"],"connection":["close"]}}
+Request: GET https://graph.microsoft.com/v1.0/drive/special/approot null null {"headers":{"Authorization":"bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFDRWZleFh4amFtUWIzT2VHUTRHdWd2czltMGhkTEpQUTZGOFBTb3M1T1lFSzZMazF6YWhqRkxzTWZUMXg2T1RwSlBHVkV5anB4d1NZalRBOFZVZ3NfMDhVS1NjcE05LTJEclFqeEFJMmdZMHlBQSIsImFsZyI6IlJTMjU2IiwieDV0IjoiLXN4TUpNTENJRFdNVFB2WnlKNnR4LUNEeHcwIiwia2lkIjoiLXN4TUpNTENJRFdNVFB2WnlKNnR4LUNEeHcwIn0.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9jNDI5MzFlMy02NzMzLTQxZTYtOGQ0Mi1jNDhiYTMzNGJiYTQvIiwiaWF0IjoxNTUxNTI5OTY2LCJuYmYiOjE1NTE1Mjk5NjYsImV4cCI6MTU1MTUzMzg2NiwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFTUUEyLzhLQUFBQUpFbTJnQ25PcVczM00xc3NvbVlQQjIxcGtaWTJGT25VcGhYWm1OU0RyODA9IiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJKb3BsaW4iLCJhcHBpZCI6ImUwOWZjMGRlLWM5NTgtNDI0Zi04M2EyLWU1NmE3MjFkMzMxYiIsImFwcGlkYWNyIjoiMCIsImZhbWlseV9uYW1lIjoiTWFudWVsIENhcmRvc28gRGlhcyBHb27Dp2FsdmVzIiwiZ2l2ZW5fbmFtZSI6IkZyYW5jaXNjbyIsImlwYWRkciI6Ijg1LjI0Mi44Ny4xODMiLCJuYW1lIjoiRnJhbmNpc2N
+Error: The caller does not have permission to perform the action.
+    at OneDriveApi.oneDriveErrorResponseToError (/Applications/Joplin.app/Contents/Resources/app/lib/onedrive-api.js:124:17)
+    at OneDriveApi.exec (/Applications/Joplin.app/Contents/Resources/app/lib/onedrive-api.js:194:22)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)"
+2019-03-02 12:38:06: "Scheduling sync operation..."
+2019-03-02 12:38:14: "Scheduling sync operation..."
+2019-03-02 12:38:20: "Could not acquire synchroniser:"
+2019-03-02 12:38:20: "Error: The caller does not have permission to perform the action.
+Code: accessDenied
+Header: {"_headers":{"cache-control":["private"],"transfer-encoding":["chunked"],"content-type":["application/json"],"request-id":["60f4bb53-c126-48d4-bede-a8daab602f56"],"client-request-id":["60f4bb53-c126-48d4-bede-a8daab602f56"],"x-ms-ags-diagnostic":["{\"ServerInfo\":{\"DataCenter\":\"North Europe\",\"Slice\":\"SliceC\",\"Ring\":\"2\",\"ScaleUnit\":\"000\",\"RoleInstance\":\"AGSFE_IN_44\",\"ADSiteName\":\"NEU\"}}"],"duration":["138.7985"],"strict-transport-security":["max-age=31536000"],"date":["Sat, 02 Mar 2019 12:38:20 GMT"],"connection":["close"]}}
+Request: GET https://graph.microsoft.com/v1.0/drive/special/approot null null {"headers":{"Authorization":"bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFDRWZleFh4amFtUWIzT2VHUTRHdWd2czltMGhkTEpQUTZGOFBTb3M1T1lFSzZMazF6YWhqRkxzTWZUMXg2T1RwSlBHVkV5anB4d1NZalRBOFZVZ3NfMDhVS1NjcE05LTJEclFqeEFJMmdZMHlBQSIsImFsZyI6IlJTMjU2IiwieDV0IjoiLXN4TUpNTENJRFdNVFB2WnlKNnR4LUNEeHcwIiwia2lkIjoiLXN4TUpNTENJRFdNVFB2WnlKNnR4LUNEeHcwIn0.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9jNDI5MzFlMy02NzMzLTQxZTYtOGQ0Mi1jNDhiYTMzNGJiYTQvIiwiaWF0IjoxNTUxNTI5OTY2LCJuYmYiOjE1NTE1Mjk5NjYsImV4cCI6MTU1MTUzMzg2NiwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFTUUEyLzhLQUFBQUpFbTJnQ25PcVczM00xc3NvbVlQQjIxcGtaWTJGT25VcGhYWm1OU0RyODA9IiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJKb3BsaW4iLCJhcHBpZCI6ImUwOWZjMGRlLWM5NTgtNDI0Zi04M2EyLWU1NmE3MjFkMzMxYiIsImFwcGlkYWNyIjoiMCIsImZhbWlseV9uYW1lIjoiTWFudWVsIENhcmRvc28gRGlhcyBHb27Dp2FsdmVzIiwiZ2l2ZW5fbmFtZSI6IkZyYW5jaXNjbyIsImlwYWRkciI6Ijg1LjI0Mi44Ny4xODMiLCJuYW1lIjoiRnJhbmNpc2N
+Error: The caller does not have permission to perform the action.
+    at OneDriveApi.oneDriveErrorResponseToError (/Applications/Joplin.app/Contents/Resources/app/lib/onedrive-api.js:124:17)
+    at OneDriveApi.exec (/Applications/Joplin.app/Contents/Resources/app/lib/onedrive-api.js:194:22)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)"
+2019-03-02 12:38:22: "Could not acquire synchroniser:"
+2019-03-02 12:38:22: "Error: The caller does not have permission to perform the action.
+Code: accessDenied
+Header: {"_headers":{"cache-control":["private"],"transfer-encoding":["chunked"],"content-type":["application/json"],"request-id":["c7bfd265-e578-49cb-b78b-527380d53be1"],"client-request-id":["c7bfd265-e578-49cb-b78b-527380d53be1"],"x-ms-ags-diagnostic":["{\"ServerInfo\":{\"DataCenter\":\"North Europe\",\"Slice\":\"SliceC\",\"Ring\":\"3\",\"ScaleUnit\":\"002\",\"RoleInstance\":\"AGSFE_IN_5\",\"ADSiteName\":\"NEU\"}}"],"duration":["182.4638"],"strict-transport-security":["max-age=31536000"],"date":["Sat, 02 Mar 2019 12:38:21 GMT"],"connection":["close"]}}
+Request: GET https://graph.microsoft.com/v1.0/drive/special/approot null null {"headers":{"Authorization":"bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFDRWZleFh4amFtUWIzT2VHUTRHdWd2czltMGhkTEpQUTZGOFBTb3M1T1lFSzZMazF6YWhqRkxzTWZUMXg2T1RwSlBHVkV5anB4d1NZalRBOFZVZ3NfMDhVS1NjcE05LTJEclFqeEFJMmdZMHlBQSIsImFsZyI6IlJTMjU2IiwieDV0IjoiLXN4TUpNTENJRFdNVFB2WnlKNnR4LUNEeHcwIiwia2lkIjoiLXN4TUpNTENJRFdNVFB2WnlKNnR4LUNEeHcwIn0.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9jNDI5MzFlMy02NzMzLTQxZTYtOGQ0Mi1jNDhiYTMzNGJiYTQvIiwiaWF0IjoxNTUxNTI5OTY2LCJuYmYiOjE1NTE1Mjk5NjYsImV4cCI6MTU1MTUzMzg2NiwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFTUUEyLzhLQUFBQUpFbTJnQ25PcVczM00xc3NvbVlQQjIxcGtaWTJGT25VcGhYWm1OU0RyODA9IiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJKb3BsaW4iLCJhcHBpZCI6ImUwOWZjMGRlLWM5NTgtNDI0Zi04M2EyLWU1NmE3MjFkMzMxYiIsImFwcGlkYWNyIjoiMCIsImZhbWlseV9uYW1lIjoiTWFudWVsIENhcmRvc28gRGlhcyBHb27Dp2FsdmVzIiwiZ2l2ZW5fbmFtZSI6IkZyYW5jaXNjbyIsImlwYWRkciI6Ijg1LjI0Mi44Ny4xODMiLCJuYW1lIjoiRnJhbmNpc2N
+Error: The caller does not have permission to perform the action.
+    at OneDriveApi.oneDriveErrorResponseToError (/Applications/Joplin.app/Contents/Resources/app/lib/onedrive-api.js:124:17)
+    at OneDriveApi.exec (/Applications/Joplin.app/Contents/Resources/app/lib/onedrive-api.js:194:22)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)"
+2019-03-02 12:38:22: "Could not acquire synchroniser:"
+2019-03-02 12:38:22: "Error: The caller does not have permission to perform the action.
+Code: accessDenied
+Header: {"_headers":{"cache-control":["private"],"transfer-encoding":["chunked"],"content-type":["application/json"],"request-id":["9dee37d8-2779-464a-829b-43429adf2362"],"client-request-id":["9dee37d8-2779-464a-829b-43429adf2362"],"x-ms-ags-diagnostic":["{\"ServerInfo\":{\"DataCenter\":\"North Europe\",\"Slice\":\"SliceC\",\"Ring\":\"3\",\"ScaleUnit\":\"002\",\"RoleInstance\":\"AGSFE_IN_11\",\"ADSiteName\":\"NEU\"}}"],"duration":["149.5738"],"strict-transport-security":["max-age=31536000"],"date":["Sat, 02 Mar 2019 12:38:22 GMT"],"connection":["close"]}}
+Request: GET https://graph.microsoft.com/v1.0/drive/special/approot null null {"headers":{"Authorization":"bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFDRWZleFh4amFtUWIzT2VHUTRHdWd2czltMGhkTEpQUTZGOFBTb3M1T1lFSzZMazF6YWhqRkxzTWZUMXg2T1RwSlBHVkV5anB4d1NZalRBOFZVZ3NfMDhVS1NjcE05LTJEclFqeEFJMmdZMHlBQSIsImFsZyI6IlJTMjU2IiwieDV0IjoiLXN4TUpNTENJRFdNVFB2WnlKNnR4LUNEeHcwIiwia2lkIjoiLXN4TUpNTENJRFdNVFB2WnlKNnR4LUNEeHcwIn0.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9jNDI5MzFlMy02NzMzLTQxZTYtOGQ0Mi1jNDhiYTMzNGJiYTQvIiwiaWF0IjoxNTUxNTI5OTY2LCJuYmYiOjE1NTE1Mjk5NjYsImV4cCI6MTU1MTUzMzg2NiwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFTUUEyLzhLQUFBQUpFbTJnQ25PcVczM00xc3NvbVlQQjIxcGtaWTJGT25VcGhYWm1OU0RyODA9IiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJKb3BsaW4iLCJhcHBpZCI6ImUwOWZjMGRlLWM5NTgtNDI0Zi04M2EyLWU1NmE3MjFkMzMxYiIsImFwcGlkYWNyIjoiMCIsImZhbWlseV9uYW1lIjoiTWFudWVsIENhcmRvc28gRGlhcyBHb27Dp2FsdmVzIiwiZ2l2ZW5fbmFtZSI6IkZyYW5jaXNjbyIsImlwYWRkciI6Ijg1LjI0Mi44Ny4xODMiLCJuYW1lIjoiRnJhbmNpc2N
+Error: The caller does not have permission to perform the action.
+    at OneDriveApi.oneDriveErrorResponseToError (/Applications/Joplin.app/Contents/Resources/app/lib/onedrive-api.js:124:17)
+    at OneDriveApi.exec (/Applications/Joplin.app/Contents/Resources/app/lib/onedrive-api.js:194:22)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)"
+2019-03-02 12:38:23: "Could not acquire synchroniser:"
+2019-03-02 12:38:23: "Error: Could not initialise synchroniser
+Error: Could not initialise synchroniser
+    at setInterval (/Applications/Joplin.app/Contents/Resources/app/lib/BaseSyncTarget.js:97:14)"
+2019-03-02 12:38:30: "Scheduling sync operation..."
+2019-03-02 12:38:34: "Could not acquire synchroniser:"
+2019-03-02 12:38:34: "Error: The caller does not have permission to perform the action.
+Code: accessDenied
+Header: {"_headers":{"cache-control":["private"],"transfer-encoding":["chunked"],"content-type":["application/json"],"request-id":["eeb4f418-2f4d-4ba5-8ec4-32aca0228fc9"],"client-request-id":["eeb4f418-2f4d-4ba5-8ec4-32aca0228fc9"],"x-ms-ags-diagnostic":["{\"ServerInfo\":{\"DataCenter\":\"North Europe\",\"Slice\":\"SliceC\",\"Ring\":\"3\",\"ScaleUnit\":\"003\",\"RoleInstance\":\"AGSFE_IN_12\",\"ADSiteName\":\"NEU\"}}"],"duration":["136.1841"],"strict-transport-security":["max-age=31536000"],"date":["Sat, 02 Mar 2019 12:38:33 GMT"],"connection":["close"]}}
+Request: GET https://graph.microsoft.com/v1.0/drive/special/approot null null {"headers":{"Authorization":"bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFDRWZleFh4amFtUWIzT2VHUTRHdWd2czltMGhkTEpQUTZGOFBTb3M1T1lFSzZMazF6YWhqRkxzTWZUMXg2T1RwSlBHVkV5anB4d1NZalRBOFZVZ3NfMDhVS1NjcE05LTJEclFqeEFJMmdZMHlBQSIsImFsZyI6IlJTMjU2IiwieDV0IjoiLXN4TUpNTENJRFdNVFB2WnlKNnR4LUNEeHcwIiwia2lkIjoiLXN4TUpNTENJRFdNVFB2WnlKNnR4LUNEeHcwIn0.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9jNDI5MzFlMy02NzMzLTQxZTYtOGQ0Mi1jNDhiYTMzNGJiYTQvIiwiaWF0IjoxNTUxNTI5OTY2LCJuYmYiOjE1NTE1Mjk5NjYsImV4cCI6MTU1MTUzMzg2NiwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFTUUEyLzhLQUFBQUpFbTJnQ25PcVczM00xc3NvbVlQQjIxcGtaWTJGT25VcGhYWm1OU0RyODA9IiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJKb3BsaW4iLCJhcHBpZCI6ImUwOWZjMGRlLWM5NTgtNDI0Zi04M2EyLWU1NmE3MjFkMzMxYiIsImFwcGlkYWNyIjoiMCIsImZhbWlseV9uYW1lIjoiTWFudWVsIENhcmRvc28gRGlhcyBHb27Dp2FsdmVzIiwiZ2l2ZW5fbmFtZSI6IkZyYW5jaXNjbyIsImlwYWRkciI6Ijg1LjI0Mi44Ny4xODMiLCJuYW1lIjoiRnJhbmNpc2N
+Error: The caller does not have permission to perform the action.
+    at OneDriveApi.oneDriveErrorResponseToError (/Applications/Joplin.app/Contents/Resources/app/lib/onedrive-api.js:124:17)
+    at OneDriveApi.exec (/Applications/Joplin.app/Contents/Resources/app/lib/onedrive-api.js:194:22)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)"
+2019-03-02 12:38:35: "Could not acquire synchroniser:"
+2019-03-02 12:38:35: "Error: The caller does not have permission to perform the action.
+Code: accessDenied
+Header: {"_headers":{"cache-control":["private"],"transfer-encoding":["chunked"],"content-type":["application/json"],"request-id":["cea72c23-5aad-4759-a119-7aad12a9458e"],"client-request-id":["cea72c23-5aad-4759-a119-7aad12a9458e"],"x-ms-ags-diagnostic":["{\"ServerInfo\":{\"DataCenter\":\"North Europe\",\"Slice\":\"SliceC\",\"Ring\":\"3\",\"ScaleUnit\":\"003\",\"RoleInstance\":\"AGSFE_IN_28\",\"ADSiteName\":\"NEU\"}}"],"duration":["189.3856"],"strict-transport-security":["max-age=31536000"],"date":["Sat, 02 Mar 2019 12:38:34 GMT"],"connection":["close"]}}
+Request: GET https://graph.microsoft.com/v1.0/drive/special/approot null null {"headers":{"Authorization":"bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFDRWZleFh4amFtUWIzT2VHUTRHdWd2czltMGhkTEpQUTZGOFBTb3M1T1lFSzZMazF6YWhqRkxzTWZUMXg2T1RwSlBHVkV5anB4d1NZalRBOFZVZ3NfMDhVS1NjcE05LTJEclFqeEFJMmdZMHlBQSIsImFsZyI6IlJTMjU2IiwieDV0IjoiLXN4TUpNTENJRFdNVFB2WnlKNnR4LUNEeHcwIiwia2lkIjoiLXN4TUpNTENJRFdNVFB2WnlKNnR4LUNEeHcwIn0.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9jNDI5MzFlMy02NzMzLTQxZTYtOGQ0Mi1jNDhiYTMzNGJiYTQvIiwiaWF0IjoxNTUxNTI5OTY2LCJuYmYiOjE1NTE1Mjk5NjYsImV4cCI6MTU1MTUzMzg2NiwiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFTUUEyLzhLQUFBQUpFbTJnQ25PcVczM00xc3NvbVlQQjIxcGtaWTJGT25VcGhYWm1OU0RyODA9IiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJKb3BsaW4iLCJhcHBpZCI6ImUwOWZjMGRlLWM5NTgtNDI0Zi04M2EyLWU1NmE3MjFkMzMxYiIsImFwcGlkYWNyIjoiMCIsImZhbWlseV9uYW1lIjoiTWFudWVsIENhcmRvc28gRGlhcyBHb27Dp2FsdmVzIiwiZ2l2ZW5fbmFtZSI6IkZyYW5jaXNjbyIsImlwYWRkciI6Ijg1LjI0Mi44Ny4xODMiLCJuYW1lIjoiRnJhbmNpc2N
+Error: The caller does not have permission to perform the action.
+    at OneDriveApi.oneDriveErrorResponseToError (/Applications/Joplin.app/Contents/Resources/app/lib/onedrive-api.js:124:17)
+    at OneDriveApi.exec (/Applications/Joplin.app/Contents/Resources/app/lib/onedrive-api.js:194:22)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)"
+2019-03-02 12:38:39: "ExternalEditWatcher: Started watching /Users/fmcdg/.config/joplin-desktop/tmp/5e5a70272adf44c3a6e40848ae485ce1.md"
+2019-03-02 12:38:39: "Scheduling sync operation..."
+2019-03-02 12:38:52: "Scheduling sync operation..."
+2019-03-02 12:38:53: "Scheduling sync operation..."
+2019-03-02 12:38:57: "Scheduling sync operation..."
+2019-03-02 12:38:59: "Scheduling sync operation..."
+2019-03-02 12:39:01: "Scheduling sync operation..."
+2019-03-02 12:39:02: "Scheduling sync operation..."
+2019-03-02 12:39:03: "Scheduling sync operation..."
+2019-03-02 12:39:06: "Scheduling sync operation..."
+2019-03-02 12:39:07: "Scheduling sync operation..."
+2019-03-02 12:39:08: "Scheduling sync operation..."
+2019-03-02 12:39:09: "Scheduling sync operation..."
+2019-03-02 12:39:11: "Scheduling sync operation..."
+2019-03-02 12:39:12: "Scheduling sync operation..."
+2019-03-02 12:39:12: "Scheduling sync operation..."
+2019-03-02 12:39:16: "Scheduling sync operation..."
+2019-03-02 12:39:17: "Scheduling sync operation..."
+2019-03-02 12:39:35: "Scheduling sync operation..."

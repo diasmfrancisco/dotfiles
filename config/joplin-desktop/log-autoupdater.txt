@@ -1,0 +1,4 @@
+2019-03-02 12:35:44: "checkForUpdates: Initializing..."
+2019-03-02 12:35:45: "Current version: 1.0.117"
+2019-03-02 12:35:45: "Latest version: 1.0.135"
+2019-03-02 12:35:49: "checkForUpdates: Done."
