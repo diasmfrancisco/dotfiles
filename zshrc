@@ -10,6 +10,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/roles/dotfiles/oh-my-zsh"
 
+# Path to conda
+export PATH="/Users/fmcdg/miniconda3/bin:$PATH"
+
 # Start up with default tmux
 if [ -z "$TMUX" ]; then
         tmux attach -t default || tmux new -s default
