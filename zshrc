@@ -24,8 +24,8 @@ fi
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="amuse"
 # ZSH_THEME="theunraveler"
-ZSH_THEME="ys"
-# ZSH_THEME="wezm"
+# ZSH_THEME="ys"
+ZSH_THEME="wezm"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
