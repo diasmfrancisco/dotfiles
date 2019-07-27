@@ -71,7 +71,6 @@ nnoremap <Leader>c <C-w>c
 " nnoremap <Leader>k <C-w>k
 " nnoremap <Leader>l <C-w>l
 
-
 """"""""""""""""""""""""""
 """"""""""""""""""""""""""
 """ Plugins
@@ -91,6 +90,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
 
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'SirVer/ultisnips'
@@ -103,11 +104,15 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'lervag/vimtex'
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
+Plug 'reedes/vim-pencil'
+Plug 'tpope/vim-repeat'
 
 """"""""""""""""""""""""""
 """ Markdown; figure it out!
+
+autocmd BufRead,BufNewFile {*.markdown,*.mdown,*.mkdn,*.md,*.mkd,*.mdwn,*.mdtxt,*.mdtext,*.text} set filetype=markdown
+
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'ferrine/md-img-paste.vim'
@@ -129,7 +134,6 @@ Plug 'elzr/vim-json'
 """ Currently NOT in use
 
 " Plug 'tpope/vim-vinegar'
-" Plug 'tpope/vim-repeat'
 " Plug 'mbbill/undotree'
 " Plug 'flazz/vim-colorschemes'
 " Plug 'fatih/vim-go'
@@ -219,7 +223,7 @@ nnoremap <CR> :nohlsearch<CR><CR>
 """"""""""""""""""""""""""
 """ Other behavior
 
-" Tabularize
+" Tabularize, for LaTeX, with ampersands!
 nnoremap <Leader>a :Tabularize /&<CR>
 vnoremap <Leader>a :Tabularize /&<CR>
 
@@ -240,12 +244,6 @@ function! s:align()
 endfunction
 
 
-""""""""""""""""""""""""""
-" Goyo and Limelight options
-
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
 
 """"""""""""""""""""""""""
 " Markdown Preview
@@ -263,19 +261,19 @@ nnoremap <Leader>f :FZF<Enter>
 
 autocmd FileType markdown nmap <silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 " there are some defaults for image directory and image name, you can change them
-let g:mdip_imgdir = 'image-assets'
-" let g:mdip_imgname = 'image'
+let g:mdip_imgdir                      = 'image-assets'
+" let g:mdip_imgname                   = 'image'
 
 """"""""""""""""""""""""""
 " LaTeX
 
-let g:tex_flavor  = 'latex'
-let g:tex_conceal = ''
-let g:vimtex_fold_manual = 1
-let g:vimtex_latexmk_continuous = 1
-let g:vimtex_compiler_progname = 'nvr'
+let g:tex_flavor                       = 'latex'
+let g:tex_conceal                      = ''
+let g:vimtex_fold_manual               = 1
+let g:vimtex_latexmk_continuous        = 1
+let g:vimtex_compiler_progname         = 'nvr'
 " use SumatraPDF if you are on Windows
-let g:vimtex_view_method = 'skim'
+let g:vimtex_view_method               = 'skim'
 
 "autocmd FileType tex set autoindent
 " Set the make program (rubber)
@@ -325,13 +323,13 @@ autocmd! BufNewFile * silent! 0r ~/.vim/skel/template.%:e
 " Snippets
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsExpandTrigger       = '<tab>'
+let g:UltiSnipsJumpForwardTrigger  = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
+let g:vimtex_quickfix_mode         = 0
+" set conceallevel                   = 1
+let g:tex_conceal                  = 'abdmg'
 
 autocmd FileType latex,tex,md,markdown setlocal spell
 set spelllang=en_us,en_gb
@@ -351,6 +349,36 @@ set spellfile=~/roles/dotfiles/vim/vim-spell-en.utf-8.add
 " set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_loc_list            = 1
+let g:syntastic_check_on_open            = 1
+let g:syntastic_check_on_wq              = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Pencil
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
+
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,md, mkd call pencil#init()
+  autocmd FileType text             call pencil#init({'wrap': 'hard'})
+augroup END
+
+""""""""""""""""""""""""""
+" Writing optionS! Goyo, Limelight, and Vim-Pencil
+
+nnoremap <Leader>gg :Goyo<CR>
+let g:limelight_conceal_ctermfg = 240
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+ " Pencil / Writing Controls {{{
+let g:pencil#wrapModeDefault     = 'soft'
+let g:pencil#textwidth           = 50
+let g:pencil#joinspaces          = 0
+let g:pencil#cursorwrap          = 1
+let g:pencil#conceallevel        = 2
+let g:pencil#concealcursor       = 'c'
+let g:pencil#softDetectSample    = 20
+let g:pencil#softDetectThreshold = 130
+ " }}}
