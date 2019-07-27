@@ -1,0 +1,174 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[%active,
+            generate=extracted-stuff-placeholder,
+            %extract-cmd={section},
+            extract-env={definition,theorem,corollary}]{extract}
+
+% \usepackage[active,
+%             generate=PLACEHOLDER-theorems,
+%             %extract-cmd={section},
+%             extract-env={theorem,corollary}]{extract}
+
+\begin{extract*}
+  \usepackage{amsthm}
+  \usepackage{amsfonts, amsmath}
+  %For more on colors: https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide
+  \usepackage[dvipsnames]{xcolor}
+  %\newtheorem{theorem}{Theorem}
+  \theoremstyle{definition}
+  \definecolor{Tm}{rgb}{0,0,0.80}
+  %\newtheorem{definition}{Definition}
+  \newtheorem{definition}{{\textbf{Definition}}}
+  \newtheorem{theorem}{{\textbf{Theorem}}}
+  \newtheorem{corollary}{{\textbf{Corollary}}}
+  %\newtheorem{definition}{\color{NavyBlue}{\textbf{Definition}}}
+  %\newtheorem{theorem}{\color{ForestGreen}{\textbf{Theorem}}}
+  %\newtheorem{corollary}{\color{ForestGreen}{\textbf{Corollary}}}
+  \newcommand{\e}{\epsilon}
+	%\newcommand{\d}{\delta}
+	\newcommand{\D}{\Delta}
+  %% Could instead use (see below):
+  % \newcommand{\bb}[1]{\mathbb{#1}}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Z}{\mathbb{Z}}
+\end{extract*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{amsfonts, amsmath}
+\usepackage{csquotes}
+
+\usepackage{amssymb, geometry}
+\geometry{a4paper} %pre-defined
+%\geometry{a4paper, left=2cm,right=2cm,top=2.5cm,bottom=2.5cm} %moderate
+%\geometry{a4paper, left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm} %normal
+
+\usepackage{scalefnt}
+\usepackage{setspace}
+\usepackage{color,hyperref}
+%\usepackage{epsfig,subfigure,morefloats}
+\usepackage{natbib}
+\usepackage{dsfont}
+%\usepackage{epstopdf}
+%\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,siunitx}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage[section]{placeins}
+%\usepackage{hypcap}
+\usepackage{afterpage}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+
+\providecommand{\u}[1]{\protect\rule{.1in}{.1in}}
+\providecommand{\u}[1]{\protect\rule{.1in}{.1in}}
+%\newtheorem{theorem}{\color{ForestGreen}{\textbf{Theorem}}}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+%\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}{Claim}
+%\newtheorem{claim}{\color{JungleGreen}Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{criterion}[theorem]{Criterion}
+% \newtheorem{definition}{Definition}
+% \theoremstyle{definition}
+\newtheorem{example}{Example}
+%\newtheorem{example}{\color{WildStrawberry}Example}
+\newtheorem{exercise}{Exercise}
+%\newtheorem{exercise}{\color{YellowOrange}Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\theoremstyle{definition}
+%\newtheorem{solution}[theorem]{Solution}
+\newtheorem{solution}{Solution}
+%\newtheorem{solution}{\color{Goldenrod}Solution}
+\newtheorem{summary}[theorem]{Summary}
+
+%\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+%\hypersetup{pdftex,colorlinks=true,allcolors=black,citecolor=black}
+
+\usepackage{floatrow}
+\usepackage{float}
+\usepackage{indentfirst}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\algnewcommand\algorithmicforeach{\textbf{for each}}
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FONT STUFF
+% \graphicspath{{./img/}}
+\usepackage{listings}
+\usepackage{subcaption}
+\usepackage[toc,page]{appendix}
+%\usepackage[extendedchars]{grffile}
+%\usepackage{mathpazo} % math & rm
+%\linespread{1.05}     % Palatino needs more leading (space between lines)
+%\usepackage[scaled]{helvet} % ss
+%\usepackage{courier} % tt
+%\normalfont
+%\usepackage[T1]{fontenc}
+
+%% Math commands
+% \newcommand{\e}{\epsilon}
+% \newcommand{\d}{\delta}
+% \newcommand{\D}{\Delta}
+% \newcommand{\R}{\mathbb{R}}
+% \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+
+\setcounter{tocdepth}{4}
+\pagenumbering{arabic}
+
+%% On tables:
+% Toprule and bottomrule thickness: 0.80002pt, whereas midrule thickness: 0.50003pt
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% page style stuff
+\setlength{\headheight}{15pt}
+\pagestyle{fancyplain}
+\lhead{note-title}
+\rhead{Francisco Gon\c{c}alves}
+
+%\title{note-title}
+%\author{Francisco Gon\c{c}alves}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%\maketitle
+%\thispagestyle{empty}
+%\addtocounter{page}{-1}
+%\tableofcontents
+%\newpage
+
+% START
+
+
+
+\end{document}

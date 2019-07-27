@@ -1,5 +1,6 @@
 # added by Miniconda3 4.3.21 installer
 export PATH="/Users/fmcdg/miniconda3/bin:$PATH"
+alias "python" "python3.6"
 
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave

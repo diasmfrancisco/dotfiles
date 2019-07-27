@@ -85,7 +85,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
+plugins=(git zsh-z zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
@@ -151,3 +151,9 @@ alias tm="tmux attach || tmux new"
 alias tmn="tmux new -s" # + new session name
 alias tmk="tmux kill-session -t" # + new session name
 alias tma="tmux a -t mysession" # + session name
+
+# Alias for python 3.6
+# alias python='python3.6'
+# alias 2='python2.7'
+# alias 3='python3.6'
+export PATH="/usr/local/opt/texinfo/bin:$PATH"
