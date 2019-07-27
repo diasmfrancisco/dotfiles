@@ -103,6 +103,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'lervag/vimtex'
 Plug 'christoomey/vim-tmux-navigator'
 
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/syntastic'
+
 """"""""""""""""""""""""""
 """ Markdown; figure it out!
 
@@ -127,7 +130,6 @@ Plug 'elzr/vim-json'
 
 " Plug 'tpope/vim-vinegar'
 " Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-fugitive'
 " Plug 'mbbill/undotree'
 " Plug 'flazz/vim-colorschemes'
 " Plug 'fatih/vim-go'
@@ -251,14 +253,6 @@ autocmd! User GoyoLeave Limelight!
 " Don't close preview tab when switching to other buffers
 "let g:mkdp_auto_close = 0
 
-""""""""""""""""""""""""""
-" Snippets
-
-" Trigger configuration. Do not use <tab> if you use YouCompleteMe
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
 
 """"""""""""""""""""""""""
 " fzf
@@ -327,5 +321,36 @@ autocmd InsertLeave * set nopaste
 " Skeleton files
 autocmd! BufNewFile * silent! 0r ~/.vim/skel/template.%:e
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Snippets
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
+autocmd FileType latex,tex,md,markdown setlocal spell
+set spelllang=en_us,en_gb
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+" Set spellfile to location that is guaranteed to exist,
+" can be symlinked to Dropbox or kept in Git
+" and managed outside of thoughtbot/dotfiles using rcm.
+set spellfile=~/roles/dotfiles/vim/vim-spell-en.utf-8.add
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" set statusline+=%#warningmsg"#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
