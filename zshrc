@@ -116,6 +116,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh
 
+# Alias for python 3.6
+# alias python='python3.6'
+# alias 2='python2.7'
+# alias 3='python3.6'
+export PATH="/usr/local/opt/texinfo/bin:$PATH"
+
+# FZF 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="-- extended"
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+
 
 ######################################################################
 ######################################################################
@@ -157,14 +170,4 @@ alias tmn="tmux new -s" # + new session name
 alias tmk="tmux kill-session -t" # + new session name
 alias tma="tmux a -t mysession" # + session name
 
-# Alias for python 3.6
-# alias python='python3.6'
-# alias 2='python2.7'
-# alias 3='python3.6'
-export PATH="/usr/local/opt/texinfo/bin:$PATH"
 
-# FZF 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPS="-- extended"
-export FZF_DEFAULT_COMMAND="fd --type f"
-export FZF_T_COMMAND="$FZF_DEFAULT_COMMAND"
