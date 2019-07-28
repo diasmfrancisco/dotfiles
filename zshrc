@@ -158,7 +158,8 @@ alias tma="tmux a -t mysession" # + session name
 # alias 3='python3.6'
 export PATH="/usr/local/opt/texinfo/bin:$PATH"
 
-# fzf alias to open in vim
-alias fvim="vim -o `fzf`"
-
+# FZF 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="-- extended"
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_T_COMMAND="$FZF_DEFAULT_COMMAND"

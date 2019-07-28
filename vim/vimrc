@@ -81,7 +81,7 @@ call plug#begin('~/.vim/plugged')
 """"""""""""""""""""""""""
 """ Currently in use
 
-Plug '/usr/local/opt/fzf'
+Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
