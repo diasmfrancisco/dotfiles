@@ -1,5 +1,10 @@
+""""""""""""""""""""""""""
+"""" Miscellaneous settings that might be worth enabling
 
+"set cursorline         " highlight current line
+"set autoread           " autoreload the file in Vim if it has been changed outside of Vim
 set background=dark
+
 
 " enter the new millienium
 set nocompatible
@@ -24,25 +29,21 @@ set wildmenu      " Display all matching files when we complete tab
 " Create the 'tags' file after ctags is installed
 command! MakeTags !ctags -R .
 
-" NOW WE CAN:
+
+" Now we can:
 " - Use ^] to jump to tag under cursor
 " - Use g^] for ambiguous tags
 " - Use ^t to jump back up the tag stack
-
-" THINGS TO CONSIDER:
 " - This doesn't help if you want a visual list of tags
 
 " AUTOCOMPLETE
-
 " The good stuff is documented in |ins-completion|
 
-" HIGHLIGHTS:
 " - ^x^n for JUST this file
 " - ^x^f for filenames (works with our path trick!)
 " - ^x^] for tags only
 " - ^n for anything specifid by the 'complete' option
 
-" NOW WE CAN:
 " - Use ^n and ^p to go back and forth in the suggestion list!
 
 " SHOWING DOTFILES (NETWR)
@@ -80,6 +81,9 @@ call plug#begin('~/.vim/plugged')
 
 """"""""""""""""""""""""""
 """ Currently in use
+
+Plug 'chriskempson/base16-vim'
+" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
@@ -180,8 +184,13 @@ nmap k gk
 " put colorscheme files in ~/.vim/colors/
 " good colorschemes: murphy, slate, molokai, badwolf, solarized
 
-colorscheme badwolf
-" let g:dracula_italic = 0
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme badwolf " nord badwolf
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 " use filetype-based syntax highlighting, ftplugins, and indentation
 " syntax enable
@@ -208,13 +217,6 @@ set hlsearch            " highlight matches
 
 " turn off search highlighting with <CR> (carriage-return)
 nnoremap <CR> :nohlsearch<CR><CR>
-
-""""""""""""""""""""""""""
-"""" Miscellaneous settings that might be worth enabling
-
-"set cursorline         " highlight current line
-"set background=dark    " configure Vim to use brighter colors
-"set autoread           " autoreload the file in Vim if it has been changed outside of Vim
 
 
 
