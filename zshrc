@@ -157,3 +157,8 @@ alias tma="tmux a -t mysession" # + session name
 # alias 2='python2.7'
 # alias 3='python3.6'
 export PATH="/usr/local/opt/texinfo/bin:$PATH"
+
+# fzf alias to open in vim
+alias fvim="vim -o `fzf`"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -111,7 +111,7 @@ Plug 'tpope/vim-repeat'
 """"""""""""""""""""""""""
 """ Markdown; figure it out!
 
-autocmd BufRead,BufNewFile {*.markdown,*.mdown,*.mkdn,*.md,*.mkd,*.mdwn,*.mdtxt,*.mdtext,*.text} set filetype=markdown
+autocmd BufRead,BufNewFile {*.markdown,*.mdown,*.mkdn,*.md,*.mkd} set filetype=markdown
 
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
@@ -360,8 +360,8 @@ let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
 
 augroup pencil
   autocmd!
-  autocmd FileType markdown,md, mkd call pencil#init()
-  autocmd FileType text             call pencil#init({'wrap': 'hard'})
+  autocmd FileType markdown call pencil#init()
+  autocmd FileType text     call pencil#init({'wrap': 'hard'})
 augroup END
 
 """"""""""""""""""""""""""
