@@ -22,11 +22,8 @@ fi
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="amuse"
-# ZSH_THEME="theunraveler"
-ZSH_THEME="ys"
-# ZSH_THEME="wezm"
 
+ZSH_THEME="ys"
 
 # Powerlevel stuff
 # POWERLEVEL9K_MODE='awesome-patched'
@@ -179,13 +176,6 @@ alias colt="/Users/fmcdg/roles/dotfiles/config/base16-shell/colortest"
 
 # source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 # source ~/roles/dotfiles/p10k-lean.zsh
-
-## Base16 SHELL
-
-#As per: https://github.com/chriskempson/base16-vim/issues/19
-# BASE16_SCHEME="ocean"
-# BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-# [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # Default: Base16 Shell
 BASE16_SHELL=$HOME/roles/dotfiles/config/base16-shell/

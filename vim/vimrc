@@ -29,7 +29,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-W> :w <CR>
 " Create new split and switch to it.
 nnoremap <Leader>w <C-w>v<C-w>l
-nnoremap <Leader>s <C-w>s<C-w>j
+ nnoremap <Leader>s <C-w>s<C-w>j
 " Close split
 nnoremap <Leader>c <C-w>c
 
@@ -49,8 +49,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'lervag/vimtex'
@@ -64,10 +62,28 @@ Plug 'godlygeek/tabular'
 Plug 'elzr/vim-json'
 Plug 'sheerun/vim-polyglot'
 
+" Vim bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='base16_classic'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_statusline_ontop=1
+
+" Plug 'itchyny/lightline.vim'
+" let g:lightline = {
+      " \ 'colorscheme': 'jellybeans',
+      " \ }
+
+" Tmux bar (via Vim)
+Plug 'edkolev/tmuxline.vim'
+
 call plug#end()
 
 syntax on
-colorscheme base16-default-dark
+colorscheme base16-classic-dark
 
 set t_ut=                " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
 
@@ -87,7 +103,6 @@ endif
 
 
 
-autocmd BufRead,BufNewFile {*.markdown,*.mdown,*.mkdn,*.md,*.mkd} set filetype=markdown
 
 " Basic behavior
 set number              " show line numbers
@@ -264,15 +279,6 @@ let g:vimtex_quickfix_mode         = 0
 " set conceallevel                   = 1
 let g:tex_conceal                  = 'abdmg'
 
-autocmd FileType latex,tex,md,markdown setlocal spell
-set spelllang=en_us,en_gb
-inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-
-" Set spellfile to location that is guaranteed to exist,
-" can be symlinked to Dropbox or kept in Git
-" and managed outside of thoughtbot/dotfiles using rcm.
-set spellfile=~/roles/dotfiles/vim/vim-spell-en.utf-8.add
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -307,7 +313,7 @@ autocmd! User GoyoLeave Limelight!
 
  " Pencil / Writing Controls {{{
 let g:pencil#wrapModeDefault     = 'soft'
-let g:pencil#textwidth           = 50
+let g:pencil#textwidth           = 75
 let g:pencil#joinspaces          = 0
 let g:pencil#cursorwrap          = 1
 let g:pencil#conceallevel        = 2
@@ -315,3 +321,19 @@ let g:pencil#concealcursor       = 'c'
 let g:pencil#softDetectSample    = 20
 let g:pencil#softDetectThreshold = 130
  " }}}
+
+ " Spell check
+ " For those with sadly no function keys available
+ " toggle spelling use \s
+ imap <Leader>s <C-o>:setlocal spell! spelllang=en_gb<CR>
+ nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
+
+autocmd BufRead,BufNewFile {*.markdown,*.mdown,*.mkdn,*.md,*.mkd} set filetype=md
+" autocmd FileType latex,tex,md,markdown setlocal spell
+" set spelllang=en_us ",en_gb
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+" Set spellfile to location that is guaranteed to exist,
+" can be symlinked to Dropbox or kept in Git
+" and managed outside of thoughtbot/dotfiles using rcm.
+set spellfile=~/roles/dotfiles/vim/vim-spell-en.utf-8.add
