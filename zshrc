@@ -15,7 +15,7 @@ export PATH="/Users/fmcdg/miniconda3/bin:$PATH"
 
 # Start up with default tmux
 if [ -z "$TMUX" ]; then
-        tmux attach -t default || tmux new -s default
+    tmux attach -t default || tmux new -s default
 fi
 
 # Set name of the theme to load --- if set to "random", it will
@@ -24,8 +24,8 @@ fi
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="amuse"
 # ZSH_THEME="theunraveler"
-# ZSH_THEME="ys"
-ZSH_THEME="wezm"
+ZSH_THEME="ys"
+# ZSH_THEME="wezm"
 
 
 # Powerlevel stuff
@@ -164,7 +164,9 @@ alias grhh="git reset --hard"
 alias gi="git init && gac 'Initial commit'"
 
 
-# Tmux aliases
+# Tmux aliase
+alias tmux="tmux -2"
+
 # Alias for tmux attach or new, depends
 alias tm="tmux attach || tmux new"
 
@@ -173,12 +175,18 @@ alias tmn="tmux new -s" # + new session name
 alias tmk="tmux kill-session -t" # + new session name
 alias tma="tmux a -t mysession" # + session name
 
+alias colt="/Users/fmcdg/roles/dotfiles/config/base16-shell/colortest"
 
 # source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
-source ~/roles/dotfiles/p10k-lean.zsh
+# source ~/roles/dotfiles/p10k-lean.zsh
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-        [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-                eval "$("$BASE16_SHELL/profile_helper.sh")"
+## Base16 SHELL
+
+#As per: https://github.com/chriskempson/base16-vim/issues/19
+# BASE16_SCHEME="ocean"
+# BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+# [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+
+# Default: Base16 Shell
+BASE16_SHELL=$HOME/roles/dotfiles/config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"

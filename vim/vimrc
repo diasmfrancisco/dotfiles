@@ -1,12 +1,6 @@
-""""""""""""""""""""""""""
-"""" Miscellaneous settings that might be worth enabling
-
+" Currently not in use
 "set cursorline         " highlight current line
 "set autoread           " autoreload the file in Vim if it has been changed outside of Vim
-set background=dark
-
-
-" enter the new millienium
 set nocompatible
 
 " enable syntax and plugins for newtr
@@ -16,143 +10,86 @@ syntax enable
 " FINDING FILES
 set path+=**      " Provides tab-completion  for all file-related tabs
 set wildmenu      " Display all matching files when we complete tab
-
 " NOW WE CAN
 " - Hit tab to :find by partial match
 " - Use * to make it fuzzy
-
 " THINGS TO CONSIDER
 " - :b lets you autocomplete any open buffer
-
-" TAG JUMPING
-
-" Create the 'tags' file after ctags is installed
-command! MakeTags !ctags -R .
-
-
-" Now we can:
-" - Use ^] to jump to tag under cursor
-" - Use g^] for ambiguous tags
-" - Use ^t to jump back up the tag stack
-" - This doesn't help if you want a visual list of tags
-
-" AUTOCOMPLETE
-" The good stuff is documented in |ins-completion|
-
-" - ^x^n for JUST this file
-" - ^x^f for filenames (works with our path trick!)
-" - ^x^] for tags only
-" - ^n for anything specifid by the 'complete' option
-
-" - Use ^n and ^p to go back and forth in the suggestion list!
 
 " SHOWING DOTFILES (NETWR)
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
+" Shortcuts
 " Remap keys to navigate better between windows
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" Shortcuts
-
 " Saving shortcut
 nnoremap <C-W> :w <CR>
-
 " Create new split and switch to it.
 nnoremap <Leader>w <C-w>v<C-w>l
 nnoremap <Leader>s <C-w>s<C-w>j
 " Close split
 nnoremap <Leader>c <C-w>c
 
-" Easier movement in split windows.
-" nnoremap <Leader>h <C-w>h
-" nnoremap <Leader>j <C-w>j
-" nnoremap <Leader>k <C-w>k
-" nnoremap <Leader>l <C-w>l
-
-""""""""""""""""""""""""""
-""""""""""""""""""""""""""
-""" Plugins
-
+" Plugins
 call plug#begin('~/.vim/plugged')
 
-
-""""""""""""""""""""""""""
-""" Currently in use
-
 Plug 'chriskempson/base16-vim'
-" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
-
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
-
-" Plug 'terryma/vim-multiple-cursors'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'lervag/vimtex'
 Plug 'christoomey/vim-tmux-navigator'
-
 Plug 'scrooloose/syntastic'
 Plug 'reedes/vim-pencil'
 Plug 'tpope/vim-repeat'
-
-""""""""""""""""""""""""""
-""" Markdown; figure it out!
-
-autocmd BufRead,BufNewFile {*.markdown,*.mdown,*.mkdn,*.md,*.mkd} set filetype=markdown
-
-
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'ferrine/md-img-paste.vim'
-" Plug 'https://github.com/vim-pandoc/vim-pandoc'
-" Plug 'vim-pandoc/vim-pandoc-syntax'
-
 Plug 'godlygeek/tabular'
 Plug 'elzr/vim-json'
-" Plug 'plasticboy/vim-markdown'
-" let g:vim_markdown_folding_disabled = 1
-" let g:vim_markdown_conceal = 0
-" let g:tex_conceal = ""
-" let g:vim_markdown_math = 1
-" let g:vim_markdown_frontmatter = 1  " for YAML format
-" let g:vim_markdown_toml_frontmatter = 1  " for TOML format
-" let g:vim_markdown_json_frontmatter = 1  " for JSON format
-
-""""""""""""""""""""""""""
-""" Currently NOT in use
-
-" Plug 'tpope/vim-vinegar'
-" Plug 'mbbill/undotree'
-" Plug 'flazz/vim-colorschemes'
-" Plug 'fatih/vim-go'
-" Plug 'vimwiki/vimwiki'
-
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
+syntax on
+colorscheme base16-default-dark
+
+set t_ut=                " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
+
+if has("termguicolors")  " set true colors
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
+
+if filereadable(expand("~/.vimrc_background"))
+  " let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+" set background=dark
+"colorscheme base16-chalk
 
 
 
-""""""""""""""""""""""""""
-""""""""""""""""""""""""""
-""" Basic behavior
+autocmd BufRead,BufNewFile {*.markdown,*.mdown,*.mkdn,*.md,*.mkd} set filetype=markdown
 
+" Basic behavior
 set number              " show line numbers
 set relativenumber      " show relative numbers!
 set wrap                " wrap lines
@@ -184,16 +121,10 @@ nmap k gk
 " put colorscheme files in ~/.vim/colors/
 " good colorschemes: murphy, slate, molokai, badwolf, solarized
 
-let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme badwolf " nord badwolf
-
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+" let base16colorspace=256  " Access colors present in 256 colorspace
+" colorscheme badwolf " nord badwolf
 
 " use filetype-based syntax highlighting, ftplugins, and indentation
-" syntax enable
 filetype plugin indent on
 
 
