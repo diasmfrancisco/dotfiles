@@ -5,6 +5,7 @@ set nocompatible
 
 " enable syntax and plugins for newtr
 filetype plugin on
+set omnifunc=syntaxcomplete#Complete " Omni completion
 syntax enable
 
 " FINDING FILES
@@ -66,6 +67,9 @@ let g:pandoc#syntax#colorcolumn                         = 0 " was changed!
 let g:pandoc#syntax#conceal#use                         = 1
 let g:pandoc#syntax#conceal#urls                        = 0
 let g:pandoc#syntax#style#emphases                      = 1
+let g:pandoc#completion#bib#mode                        = 'citeproc'
+let g:pandoc#biblio#bibs                                = ['~/Sync/masterBib.bib'] " For bib file
+
 
 
 Plug 'SirVer/ultisnips'
@@ -95,6 +99,20 @@ let g:airline#extensions#tabline#enabled = 1
 " Tmux bar (via Vim)
 Plug 'edkolev/tmuxline.vim'
 
+" Vim templates, by Adrian Perez
+Plug 'aperezdc/vim-template'
+let g:templates_no_autocmd=0
+let g:templates_directory=['~/roles/dotfiles/vim/templates']
+let g:templates_no_builtin_templates=0
+let g:templates_user_variables=[]
+let g:templates_search_height=1 " Only search given directory
+" let g:templates_plugin_loaded=0
+
+
+
+
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Trying out
 Plug 'chrisbra/nrrwrgn'
@@ -102,7 +120,7 @@ Plug 'chrisbra/nrrwrgn'
 call plug#end()
 
 syntax on
-colorscheme base16-material
+colorscheme base16-ocean
 " colorscheme base16-classic-dark
 
 set t_ut=                " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
@@ -114,7 +132,6 @@ if has("termguicolors")  " set true colors
 endif
 
 if filereadable(expand("~/.vimrc_background"))
-  " let base16colorspace=256
   source ~/.vimrc_background
 endif
 
@@ -219,6 +236,7 @@ endfunction
 " Don't close preview tab when switching to other buffers
 "let g:mkdp_auto_close = 0
 
+nnoremap <Leader>mm :MarkdownPreview<CR>
 
 """"""""""""""""""""""""""
 " fzf
