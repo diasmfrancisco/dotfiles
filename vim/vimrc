@@ -325,10 +325,8 @@ let g:pencil#softDetectThreshold = 130
  " Spell check
  " For those with sadly no function keys available
  " toggle spelling use \s
- imap <Leader>s <C-o>:setlocal spell! spelllang=en_gb<CR>
  nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
 
-autocmd BufRead,BufNewFile {*.markdown,*.mdown,*.mkdn,*.md,*.mkd} set filetype=md
 " autocmd FileType latex,tex,md,markdown setlocal spell
 " set spelllang=en_us ",en_gb
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
@@ -337,3 +335,9 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " can be symlinked to Dropbox or kept in Git
 " and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=~/roles/dotfiles/vim/vim-spell-en.utf-8.add
+
+ nmap <Leader>h :if exists("g:syntax_on") <Bar>
+	\   syntax off <Bar>
+	\ else <Bar>
+	\   syntax enable <Bar>
+	\ endif <CR>
