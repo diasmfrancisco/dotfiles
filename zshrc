@@ -140,7 +140,7 @@ alias ntx='cd ~/Sync/notes/'
 # Git aliases
 
 # Merging and checkout
-alias gck="git checkout" # + branch
+alias gck="git checkout" + branch
 alias gmg="git merge" # + branch
 
 # Alias for add and commit

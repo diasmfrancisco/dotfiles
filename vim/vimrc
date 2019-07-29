@@ -29,7 +29,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-W> :w <CR>
 " Create new split and switch to it.
 nnoremap <Leader>w <C-w>v<C-w>l
- nnoremap <Leader>s <C-w>s<C-w>j
+nnoremap <Leader>s <C-w>s<C-w>j
 " Close split
 nnoremap <Leader>c <C-w>c
 
@@ -39,39 +39,53 @@ call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown'
-Plug 'vim-pandoc/vim-pandoc'
+
+" Markdown and pandoc; writing in general
+Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown' | Plug 'sheerun/vim-polyglot'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'reedes/vim-pencil'
+Plug 'ferrine/md-img-paste.vim'
+
+Plug 'vim-pandoc/vim-pandoc' 
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc-after'
+let g:pandoc#formatting#mode                            = "sA"
+let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1
+let g:pandoc#folding#level                              = 2
+let g:pandoc#folding#mode                               = "relative"
+let g:pandoc#after#modules#enabled                      = ["nrrwrgn", "tablemode"]
+let g:pandoc#completion#bib#mode                        = 'citeproc'
+let g:pandoc#syntax#colorcolumn                         = 0 " was changed!
+let g:pandoc#syntax#conceal#use                         = 1
+let g:pandoc#syntax#conceal#urls                        = 0
+let g:pandoc#syntax#style#emphases                      = 1
+
+
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'lervag/vimtex'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'scrooloose/syntastic'
-Plug 'reedes/vim-pencil'
 Plug 'tpope/vim-repeat'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-Plug 'ferrine/md-img-paste.vim'
-Plug 'godlygeek/tabular'
 Plug 'elzr/vim-json'
-Plug 'sheerun/vim-polyglot'
 
 " Vim bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='base16_classic'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline_statusline_ontop=1
+let g:airline#extensions#tabline#enabled = 1
 
 " Plug 'itchyny/lightline.vim'
 " let g:lightline = {
@@ -88,7 +102,8 @@ Plug 'chrisbra/nrrwrgn'
 call plug#end()
 
 syntax on
-colorscheme base16-classic-dark
+colorscheme base16-material
+" colorscheme base16-classic-dark
 
 set t_ut=                " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
 
@@ -316,6 +331,7 @@ augroup END
 " Writing optionS! Goyo, Limelight, and Vim-Pencil
 
 nnoremap <Leader>gg :Goyo<CR>
+nnoremap <Leader>pp :TogglePencil<CR>
 let g:limelight_conceal_ctermfg = 240
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
@@ -334,7 +350,7 @@ let g:pencil#softDetectThreshold = 130
  " Spell check
  " For those with sadly no function keys available
  " toggle spelling use \s
- nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
+ nnoremap <Leader>ss :setlocal spell! spelllang=en_us<CR>
 
 " autocmd FileType latex,tex,md,markdown setlocal spell
 " set spelllang=en_us ",en_gb
@@ -345,11 +361,11 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=~/roles/dotfiles/vim/vim-spell-en.utf-8.add
 
- nmap <Leader>h :if exists("g:syntax_on") <Bar>
+ nmap <Leader>hh :if exists("g:syntax_on") <Bar>
 	\   syntax off <Bar>
 	\ else <Bar>
 	\   syntax enable <Bar>
 	\ endif <CR>
 
  " Stop the damned highlighting which is left in the register!
- nnoremap <Leader>sh :let @/=""<CR>
+ nnoremap <Leader>h :let @/=""<CR>
