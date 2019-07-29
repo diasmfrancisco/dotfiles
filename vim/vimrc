@@ -47,6 +47,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
+Plug 'vim-pandoc/vim-pandoc'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
@@ -79,6 +80,10 @@ let g:airline_powerline_fonts = 1
 
 " Tmux bar (via Vim)
 Plug 'edkolev/tmuxline.vim'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Trying out
+Plug 'chrisbra/nrrwrgn'
 
 call plug#end()
 
@@ -203,6 +208,10 @@ endfunction
 """"""""""""""""""""""""""
 " fzf
 nnoremap <Leader>f :FZF<Enter>
+
+" highlighting off
+
+
 
 """"""""""""""""""""""""""
 " md image paste
@@ -341,3 +350,6 @@ set spellfile=~/roles/dotfiles/vim/vim-spell-en.utf-8.add
 	\ else <Bar>
 	\   syntax enable <Bar>
 	\ endif <CR>
+
+ " Stop the damned highlighting which is left in the register!
+ nnoremap <Leader>sh :let @/=""<CR>
