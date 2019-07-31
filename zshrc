@@ -14,9 +14,9 @@ export ZSH="$HOME/roles/dotfiles/oh-my-zsh"
 export PATH="/Users/fmcdg/miniconda3/bin:$PATH"
 
 # Start up with default tmux
-if [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
-fi
+# if [ -z "$TMUX" ]; then
+    # tmux attach -t default || tmux new -s default
+# fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -174,9 +174,17 @@ alias tma="tmux a -t mysession" # + session name
 
 alias colt="/Users/fmcdg/roles/dotfiles/config/base16-shell/colortest"
 
+# Google Drive download
+alias gdw="/Users/fmcdg/roles/scripts/gdown.pl/gdown.pl"
+
 # source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 # source ~/roles/dotfiles/p10k-lean.zsh
 
 # Default: Base16 Shell
 BASE16_SHELL=$HOME/roles/dotfiles/config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+# Ocean profile defaulted
+# BASE16_SHELL="$HOME/roles/dotfiles/config/base16-shell/scripts/base16-ocean.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+

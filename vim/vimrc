@@ -37,9 +37,13 @@ nnoremap <Leader>c <C-w>c
 " Plugins
 call plug#begin('~/.vim/plugged')
 
+" Plug 'dhruvasagar/vim-table-mode'
+" let g:table_mode_corner='|'
+
 Plug 'chriskempson/base16-vim'
-Plug '~/.fzf'
-Plug 'junegunn/fzf.vim'
+" Plug 'wincent/command-t'
+" Plug '~/.fzf'
+" Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-eunuch'
@@ -47,7 +51,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 
 " Markdown and pandoc; writing in general
-Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown' | Plug 'sheerun/vim-polyglot'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-markdown'
+Plug 'sheerun/vim-polyglot'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
