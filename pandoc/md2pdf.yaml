@@ -1,14 +1,13 @@
 ---
 # Latex Document class options
-# documentclass: scrartcl
-documentclass:  paper # Can also use slcrartcl, article, report...
-classoption:    twoside # Or oneside onecolumn & twocolumns, among others
-# bibliography:   ~/roles/dotfiles/pandoc/masterBib.bib
+# documentclass:   paper   # Can also use scrartcl, article, report...
+classoption:     twoside # Or oneside onecolumn & twocolumns, among others
+bibliography:    ~/roles/dotfiles/pandoc/masterBib.bib
 
 # Geometric aspects
 papersize:       A4
-margin-left:     3.00cm
-margin-right:    2.00cm
+margin-left:     2.50cm
+margin-right:    2.50cm
 margin-top:      2.50cm
 margin-bottom:   2.50cm
 fontsize:        12pt
@@ -23,50 +22,49 @@ link-references: true
 
 # Select color for each type of link
 colorlinks: true
-linkcolor:  NavyBlue # Can also use NavyBlue
-toccolor:   NavyBlue # Normal is black
+linkcolor:  NavyBlue
+toccolor:   NavyBlue
 citecolor:  NavyBlue
-urlcolor:   NavyBlue # Can also use NavyBlue
+urlcolor:   NavyBlue
 
 # TOC, LOF, LOT
-toc: false # Enable toc @ beginning of document
-toc-depth: 2 # Index depth
-lof: false # Enable LoFig @ beginning of doc
-lot: false # Enable LoTab @ beginning of doc
+# toc: true # Enable toc @ beginning of document
+# toc-depth: 2 # Index depth
+# lof: true
+# lot: true # Enable LoTab @ beginning of doc
 
 # Indenting
-indent: false
+indent:      false
+linestretch: 1.00
 
 # $\qed$ below gives me the command for proofs!
 header-includes: |
-    \usepackage{fontspec}
-    \usepackage{tcolorbox}
-    \newcommand\qed{\hfill\rule{1em}{1em}}
+  \usepackage{fontspec}
+  \usepackage{tcolorbox}
+  \usepackage[compact]{titlesec}
+  \usepackage{geometry}
+  \usepackage[section]{placeins}
+  \usepackage{floatflt}
+  \usepackage{enumitem}
+  \usepackage{fancyhdr}
+  
+  \newcommand\qed{\hfill\rule{8.00pt}{8.00pt}}
     
-    \usepackage[compact]{titlesec}
-    \titlespacing{\section}{0pt}{1.00ex}{0.00ex}
-    \titlespacing{\subsection}{0pt}{0.50ex}{0.00ex}
-    \titlespacing{\subsubsection}{0pt}{0.00ex}{0.00ex}
+  \titlespacing{\section}{0pt}{\parskip}{-0.50\parskip}
+  \titlespacing{\subsection}{0pt}{\parskip}{-0.75\parskip}
+  \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip} 
     
-    \usepackage{geometry}
-    \usepackage[section]{placeins}
-    \usepackage{floatflt}
+  \setlength{\parskip}{6.00pt}
 
-    \usepackage{enumitem}
-    \setlist[itemize]{noitemsep, topsep=0.00pt}
-    \setlist[enumerate]{noitemsep, topsep=0.00pt}
-    \setlength{\parskip}{1.00em}
-    \renewcommand{\baselinestretch}{0.90}
+  \setlist{nosep}
     
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \lhead{\today{}}
-    \rhead{Francisco Gon\c{c}alves}
-
+  \pagestyle{fancy}
+  \lhead{\today{}}
+  \rhead{Francisco Gon\c{c}alves}
 
 # DO NOT TOUCH THIS
 # CHANGE LATEX ENGINE FOR  PDF OUTPUT
 output:
   pdf_document: 
-    latex_engine: xelatex # Default is pdftex but I had some trouble that xelatex seemed to solve. If nothing is wrong, don't touch this.
+    latex_engine: xelatex
 ...

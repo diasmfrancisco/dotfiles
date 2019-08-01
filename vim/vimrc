@@ -86,8 +86,8 @@ Plug 'tpope/vim-fugitive'
 " Markdown and pandoc; writing in general
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-markdown'
-" Plug 'sheerun/vim-polyglot'
-" let g:polyglot_disabled = ['latex']
+Plug 'sheerun/vim-polyglot'
+let g:polyglot_disabled = ['latex']
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'junegunn/goyo.vim'
@@ -113,7 +113,8 @@ let g:pandoc#completion#bib#mode = 'citeproc'
 let g:pandoc#completion#bib#mode ='citeproc'
 let g:pandoc#biblio#bibs = ['~/Sync/masterBib.bib'] " For bib file
 
-
+Plug 'mbbill/undotree'
+nnoremap <Leader>ut :UndotreeToggle<cr>
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -291,12 +292,10 @@ nnoremap <Leader>f :FZF<Enter>
 """"""""""""""""""""""""""
 " md image paste
 
-autocmd FileType markdown nmap <silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 " there are some defaults for image directory and image name, you can change them
 let g:mdip_imgdir                      = 'image-assets'
 " let g:mdip_imgname                   = 'image'
 
-""""""""""""""""""""""""""
 " LaTeX
 
 let g:tex_flavor                       = 'latex'
@@ -307,23 +306,9 @@ let g:vimtex_compiler_progname         = 'nvr'
 " use SumatraPDF if you are on Windows
 let g:vimtex_view_method               = 'skim'
 
-"autocmd FileType tex set autoindent
-" Set the make program (rubber)
-" autocmd FileType tex set makeprg=rubber\ --inplace\ --maxerr\ 1\ \ --pdf\ --short\ --quiet\ --force\ %
-" Mappings for compiling Latex file
-" autocmd FileType tex nmap <buffer> <C-T> :!latexmk -pdf %<CR>
-" autocmd FileType tex nmap <buffer> <C-T> :!rubber --pdf --force --short %<CR>
-" autocmd FileType tex nmap <buffer> T :!open -a Skim %<.pdf %<.pdf<CR><CR>
-" autocmd FileType tex nmap <buffer> C :!rubber --clean<CR>
-
-
-"""""""""""""""""""
 " NERDtree
 nnoremap <Leader>n :NERDTreeToggle<Enter>
 let NERDTreeQuitOnOpen = 1
-
-" automatically close if NERDtree is only left standing
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Turn off auto-insert
 augroup auto_comment
@@ -331,25 +316,14 @@ augroup auto_comment
     au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 augroup END
 
-
 " Paste problems in vim
 " See: https://www.reddit.com/r/neovim/comments/9ufg11/disable_insert_paste_mode/
 
 " Toggle paste mode on and off
-map <leader>tt :setlocal paste!<cr>
+map <Leader>lp :setlocal paste!<cr>
 
-" Disable paste mode when leaving insert mode
-autocmd InsertLeave * set nopaste
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autocommands
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Remove trailing whitespace on save.
-" autocmd BufWrite * :%s/\s\+$//e
-
-" Skeleton files
-autocmd! BufNewFile * silent! 0r ~/.vim/skel/template.%:e
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Snippets
@@ -381,11 +355,7 @@ let g:syntastic_check_on_wq              = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
 
-augroup pencil
-  autocmd!
-  autocmd FileType markdown call pencil#init()
-  autocmd FileType text     call pencil#init({'wrap': 'hard'})
-augroup END
+" see more on the autogroup section below
 
 """"""""""""""""""""""""""
 " Writing optionS! Goyo, Limelight, and Vim-Pencil
@@ -393,8 +363,6 @@ augroup END
 nnoremap <Leader>gg :Goyo<CR>
 nnoremap <Leader>pp :TogglePencil<CR>
 let g:limelight_conceal_ctermfg = 240
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
 
  " Pencil / Writing Controls {{{
 let g:pencil#wrapModeDefault     = 'soft'
@@ -412,7 +380,6 @@ let g:pencil#softDetectThreshold = 130
  " toggle spelling use \s
  nnoremap <Leader>ss :setlocal spell! spelllang=en_us<CR>
 
-" autocmd FileType latex,tex,md,markdown setlocal spell
 " set spelllang=en_us ",en_gb
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
@@ -429,3 +396,50 @@ set spellfile=~/roles/dotfiles/vim/vim-spell-en.utf-8.add
 
  " Stop the damned highlighting which is left in the register!
  nnoremap <Leader>h :let @/=""<CR>
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" Custom Mappings
+"""""""""""""""""""""""""""""""""""""""""""""
+" Nothing to see here yet!
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" Autocommands
+"""""""""""""""""""""""""""""""""""""""""""""
+augroup configgroup
+    autocmd!
+    
+    " See <https://dougblack.io/words/a-good-vimrc.html#autogroup>
+    autocmd VimEnter * highlight clear SignColumn
+    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
+                \:call <SID>StripTrailingWhitespaces()
+    autocmd FileType python setlocal commentstring=#\ %s
+    autocmd BufEnter Makefile setlocal noexpandtab
+    autocmd BufEnter *.sh setlocal tabstop=2
+    autocmd BufEnter *.sh setlocal shiftwidth=2
+    autocmd BufEnter *.sh setlocal softtabstop=2
+    
+    " Remove trailing whitespace on save.
+    autocmd BufWrite * :%s/\s\+$//e
+    
+    " Pencil
+    autocmd FileType markdown call pencil#init()
+    autocmd FileType text     call pencil#init({'wrap': 'hard'})
+
+    " automatically close if NERDtree is only left standing
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+    " Markdown Clipboard Image!
+    autocmd FileType markdown nmap <silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+    
+    " Disable paste mode when leaving insert mode
+    autocmd InsertLeave * set nopaste
+augroup END
+
+" augroup pencil
+"   autocmd!
+"   autocmd FileType markdown call pencil#init()
+"   autocmd FileType text     call pencil#init({'wrap': 'hard'})
+" augroup END
