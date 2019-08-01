@@ -74,7 +74,7 @@ let g:table_mode_corner = '|'
 let g:table_mode_corner_corner = '|'
 
 Plug 'chriskempson/base16-vim'
-" Plug 'wincent/command-t'
+                                " Plug 'wincent/command-t'
 " Plug '~/.fzf'
 " Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
