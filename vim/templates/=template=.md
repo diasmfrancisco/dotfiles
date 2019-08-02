@@ -1,12 +1,26 @@
 ---
-documentclass : paper # Can also use article, and scrartcl
-title         : Notes # Use asterisks
-date          : \today{}
-author        :
-- Francisco Gon\c{c}alves
+# ------ METADATA FOR DO CLASSES
+# Options: paper, article, scrartcl, memoir, etc...
+documentclass : paper   # basic
+
+# ------ MAIN
+# date: \today{}
+# author:
+# - \today{}
+# - Francisco Gon\c{c}alves
+
+title: "Notes"
+subtitle: \today{}
+# subtitle: "Barcelona Graduate School of Economics"
 ...
 
-<!-- May have to substitute 'date' for 'author' metadata, especiall for 'paper' documentclass!-->
+\begin{comment}
+\pagenumbering{gobble}
+\clearpage
+\pagenumbering{arabic}
+\end{comment}
+
+<!-- COMMENT -->
 
 
-#
+

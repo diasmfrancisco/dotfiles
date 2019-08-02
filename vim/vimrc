@@ -2,6 +2,7 @@
 "set cursorline         " highlight current line
 "set autoread           " autoreload the file in Vim if it has been changed outside of Vim
 set nocompatible
+set cursorline
 
 " enable syntax and plugins for newtr
 filetype plugin on
@@ -43,13 +44,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-" Saving shortcut
-nnoremap <C-W> :w <CR>
-" Create new split and switch to it.
-nnoremap <Leader>w <C-w>v<C-w>l
-nnoremap <Leader>s <C-w>s<C-w>j
-" Close split
-nnoremap <Leader>c <C-w>c
 
 " Plugins
 call plug#begin('~/.vim/plugged')
@@ -99,7 +93,7 @@ Plug 'ferrine/md-img-paste.vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc-after'
-let g:pandoc#formatting#mode = "sA"
+let g:pandoc#formatting#mode = "hA"
 let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1
 let g:pandoc#folding#level = 2
 let g:pandoc#folding#mode = "relative"
@@ -112,12 +106,14 @@ let g:pandoc#syntax#style#emphases = 1
 let g:pandoc#completion#bib#mode = 'citeproc'
 let g:pandoc#completion#bib#mode ='citeproc'
 let g:pandoc#biblio#bibs = ['~/Sync/masterBib.bib'] " For bib file
+let g:pandoc#folding#fold_yaml=1 " Default is 0
 
 Plug 'mbbill/undotree'
 nnoremap <Leader>ut :UndotreeToggle<cr>
 
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+Plug 'chrisbra/nrrwrgn'
 
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -152,14 +148,16 @@ let g:templates_user_variables=[]
 let g:templates_search_height=1 " Only search given directory
 " let g:templates_plugin_loaded=0
 
-
-
-
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""
-" Trying out
-Plug 'chrisbra/nrrwrgn'
+" Wincent plugins, i.e., Greg Hurrell
+Plug 'wincent/command-t'
+Plug 'wincent/terminus'
+let g:TerminusCursorShape=1
+let g:TerminusInsertCursorShape=1
+let g:TerminusNormalCursorShape=0
+let g:TerminusReplaceCursorShape=2
+let g:TerminusBracketedPaste=1
+
 
 call plug#end()
 
@@ -205,6 +203,8 @@ set visualbell          " blink cursor on error, instead of beeping
 " configure other way to escape, as well as leader key
 let mapleader=" "
 inoremap jk <esc>
+noremap <Leader>q :q <CR>
+noremap <Leader>o :only <CR>
 
 " move vertically by visual line (don't skip wrapped lines)
 nmap j gj
@@ -246,7 +246,7 @@ set hlsearch            " highlight matches
 nnoremap <CR> :nohlsearch<CR><CR>
 
 
-
+nnoremap <S-Tab> za
 
 """"""""""""""""""""""""""
 """"""""""""""""""""""""""
@@ -313,7 +313,8 @@ augroup END
 " See: https://www.reddit.com/r/neovim/comments/9ufg11/disable_insert_paste_mode/
 
 " Toggle paste mode on and off
-map <Leader>lp :setlocal paste!<cr>
+" Not needed with terminus?
+" map <Leader>lp :setlocal paste!<cr>
 
 
 

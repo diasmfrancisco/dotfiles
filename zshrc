@@ -182,6 +182,9 @@ alias colt="/Users/fmcdg/roles/dotfiles/config/base16-shell/colortest"
 # Google Drive download
 alias gdw="/Users/fmcdg/roles/scripts/gdown.pl/gdown.pl"
 
+# Alias fpr studying folder
+alias advmt="cd ~/Dropbox/study-prep-masters/advanced-mathematics/"
+
 # source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 # source ~/roles/dotfiles/p10k-lean.zsh
 
@@ -193,3 +196,6 @@ BASE16_SHELL=$HOME/roles/dotfiles/config/base16-shell/
 # BASE16_SHELL="$HOME/roles/dotfiles/config/base16-shell/scripts/base16-ocean.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

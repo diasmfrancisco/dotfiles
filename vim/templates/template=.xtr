@@ -1,0 +1,21 @@
+  \usepackage{amsthm}
+  \usepackage{amsfonts, amsmath}
+  %For more on colors: https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide
+  \usepackage[dvipsnames]{xcolor}
+  %\newtheorem{theorem}{Theorem}
+  \theoremstyle{definition}
+  \definecolor{Tm}{rgb}{0,0,0.80}
+  %\newtheorem{definition}{Definition}
+  \newtheorem{definition}{{\textbf{Definition}}}
+  \newtheorem{theorem}{{\textbf{Theorem}}}
+  \newtheorem{corollary}{{\textbf{Corollary}}}
+  %\newtheorem{definition}{\color{NavyBlue}{\textbf{Definition}}}
+  %\newtheorem{theorem}{\color{ForestGreen}{\textbf{Theorem}}}
+  %\newtheorem{corollary}{\color{ForestGreen}{\textbf{Corollary}}}
+  \newcommand{\e}{\epsilon}
+%\newcommand{\d}{\delta}
+\newcommand{\D}{\Delta}
+  %% Could instead use (see below):
+  % \newcommand{\bb}[1]{\mathbb{#1}}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Z}{\mathbb{Z}}

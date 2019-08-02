@@ -1,13 +1,13 @@
 ---
 # Latex Document class options
 # documentclass:   paper   # Can also use scrartcl, article, report...
-classoption:     oneside # Or oneside onecolumn & twocolumns, among others
+classoption:     twoside  # Or oneside onecolumn & twocolumns, among others
 bibliography:    ~/roles/dotfiles/pandoc/masterBib.bib
 
 # Geometric aspects
 papersize:       A4
-margin-left:     2.50cm
-margin-right:    2.50cm
+margin-left:     2.75cm
+margin-right:    2.25cm
 margin-top:      2.50cm
 margin-bottom:   2.50cm
 fontsize:        12pt
@@ -27,6 +27,12 @@ toccolor:   black
 citecolor:  black
 urlcolor:   NavyBlue
 
+# TOC, LOF, LOT
+# toc: true # Enable toc @ beginning of document
+# toc-depth: 2 # Index depth
+# lof: true
+# lot: true # Enable LoTab @ beginning of doc
+
 # Indenting
 indent:      false
 linestretch: 1.00
@@ -34,15 +40,15 @@ linestretch: 1.00
 # ToC, LoT, and LoF
 # numbersections: true
 include-before: |
-  \begin{comment}
   \pagenumbering{gobble}
   \newpage
   \tableofcontents\clearpage
+  \begin{comment}
   \listoftables
   \listoffigures
   \clearpage
-  \pagenumbering{arabic}
   \end{comment}
+  \pagenumbering{arabic}
 
 # $\qed$ below gives me the command for proofs!
 # May need <\setlength{\footskip}{20pt}> for some document classes

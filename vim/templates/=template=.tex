@@ -1,14 +1,18 @@
 % vim:ft=tex:
 %
-\documentclass[11pt]{article}
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{blindtext}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% ------------------------------------------------------
 \usepackage[%active,
             generate=extracted-stuff-placeholder,
             %extract-cmd={section},
             extract-env={definition,theorem,corollary}]{extract}
-
 % \usepackage[active,
 %             generate=PLACEHOLDER-theorems,
 %             %extract-cmd={section},
@@ -38,17 +42,13 @@
   \newcommand{\Z}{\mathbb{Z}}
 \end{extract*}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% ------------------------------------------------------
 %\usepackage{amsfonts, amsmath}
-\usepackage{csquotes}
-
 \usepackage{amssymb, geometry}
-\geometry{a4paper} %pre-defined
-%\geometry{a4paper, left=2cm,right=2cm,top=2.5cm,bottom=2.5cm} %moderate
-%\geometry{a4paper, left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm} %normal
+\geometry{a4paper, left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm} %normal
 
-\usepackage{scalefnt}
-\usepackage{setspace}
 \usepackage{color,hyperref}
 %\usepackage{epsfig,subfigure,morefloats}
 \usepackage{natbib}
@@ -63,10 +63,18 @@
 \usepackage[section]{placeins}
 %\usepackage{hypcap}
 \usepackage{afterpage}
-\usepackage{fancyhdr}
 
+\usepackage{csquotes}
+\usepackage{setspace}
+
+
+
+% ------------------------------------------------------
 \setcounter{MaxMatrixCols}{10}
 
+
+
+% ------------------------------------------------------
 \providecommand{\u}[1]{\protect\rule{.1in}{.1in}}
 \providecommand{\u}[1]{\protect\rule{.1in}{.1in}}
 %\newtheorem{theorem}{\color{ForestGreen}{\textbf{Theorem}}}
@@ -112,60 +120,74 @@
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% FONT STUFF
+
+
+% ---------------------------------------- GRAPHICS PATH
 % \graphicspath{{./img/}}
 \usepackage{listings}
 \usepackage{subcaption}
 \usepackage[toc,page]{appendix}
+
+
+
+% ------------------------------------------------ FONTS
 %\usepackage[extendedchars]{grffile}
 %\usepackage{mathpazo} % math & rm
 %\linespread{1.05}     % Palatino needs more leading (space between lines)
 %\usepackage[scaled]{helvet} % ss
 %\usepackage{courier} % tt
-%\normalfont
-%\usepackage[T1]{fontenc}
 
-%% Math commands
+
+
+% -------------- MATH COMMANDS + NOTE ON TABLE THICKNESS
 % \newcommand{\e}{\epsilon}
 % \newcommand{\d}{\delta}
 % \newcommand{\D}{\Delta}
 % \newcommand{\R}{\mathbb{R}}
 % \newcommand{\Z}{\mathbb{Z}}
-\newcommand{\bb}[1]{\mathbb{#1}}
+% \newcommand{\bb}[1]{\mathbb{#1}}
 
-\setcounter{tocdepth}{4}
-\pagenumbering{arabic}
-
-%% On tables:
+% On TABLES:
 % Toprule and bottomrule thickness: 0.80002pt, whereas midrule thickness: 0.50003pt
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% page style stuff
+% ------------ PAGE STYLE: NUMBERING, FOOTER, AND HEADER
+\usepackage{fancyhdr}
+\setlength{\footskip}{25pt}
 \setlength{\headheight}{15pt}
-\pagestyle{fancyplain}
-\lhead{note-title}
+\pagestyle{fancy}
+\lhead{\today{}}
 \rhead{Francisco Gon\c{c}alves}
 
-%\title{note-title}
-%\author{Francisco Gon\c{c}alves}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ------------------------------------ PAGE STYLE: TITLE
+\title{Some Title}
+\author{Francisco Gon\c{c}alves}%\thanks{Barcelona Graduate School of Economics}}
+
 \begin{document}
+\pagenumbering{gobble}
+\maketitle
+\thispagestyle{empty}
 
-%\maketitle
-%\thispagestyle{empty}
-%\addtocounter{page}{-1}
+
+
+% -------------------------------------- PAGE STYLE: TOC
+% \setcounter{tocdepth}{4}
 %\tableofcontents
-%\newpage
+%\clearpage
+%\listoftables
+%\listoffigures
 
-% Write below here!
+\newpage\pagenumbering{arabic}
 
+
+
+% ---------------------------------------- START WRITING
+\section{The first section}
+
+\blindtext{}
 
 
 \end{document}
-
