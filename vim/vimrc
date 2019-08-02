@@ -74,9 +74,9 @@ let g:table_mode_corner = '|'
 let g:table_mode_corner_corner = '|'
 
 Plug 'chriskempson/base16-vim'
-                                " Plug 'wincent/command-t'
-" Plug '~/.fzf'
-" Plug 'junegunn/fzf.vim'
+
+Plug '~/.fzf'
+
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-eunuch'
@@ -96,7 +96,7 @@ Plug 'reedes/vim-pencil'
 Plug 'ferrine/md-img-paste.vim'
 
 " Plug 'wbthomason/buildit.nvim'
-Plug 'vim-pandoc/vim-pandoc' 
+Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc-after'
 let g:pandoc#formatting#mode = "sA"
@@ -259,7 +259,7 @@ vnoremap <Leader>a :Tabularize /&<CR>
 
 """"""""""""""""""""""""""
 " Automatic tabularization, from Tim Pope
-" 
+"
 " inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 " function! s:align()
         " let p = '^\s*|\s.*\s|\s*$'
@@ -280,13 +280,6 @@ vnoremap <Leader>a :Tabularize /&<CR>
 "let g:mkdp_auto_close = 0
 
 nnoremap <Leader>mm :MarkdownPreview<CR>
-
-""""""""""""""""""""""""""
-" fzf
-nnoremap <Leader>f :FZF<Enter>
-
-" highlighting off
-
 
 
 """"""""""""""""""""""""""
@@ -403,14 +396,16 @@ set spellfile=~/roles/dotfiles/vim/vim-spell-en.utf-8.add
 """""""""""""""""""""""""""""""""""""""""""""
 " Custom Mappings
 """""""""""""""""""""""""""""""""""""""""""""
-" Nothing to see here yet!
+" for file fuzzy finder, within vim
+nnoremap <Leader>fz :FZF<Enter>
+
 
 """""""""""""""""""""""""""""""""""""""""""""
 " Autocommands
 """""""""""""""""""""""""""""""""""""""""""""
 augroup configgroup
     autocmd!
-    
+
     " See <https://dougblack.io/words/a-good-vimrc.html#autogroup>
     autocmd VimEnter * highlight clear SignColumn
     autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
@@ -420,10 +415,10 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal tabstop=2
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
-    
+
     " Remove trailing whitespace on save.
     autocmd BufWrite * :%s/\s\+$//e
-    
+
     " Pencil
     autocmd FileType markdown call pencil#init()
     autocmd FileType text     call pencil#init({'wrap': 'hard'})
@@ -433,7 +428,7 @@ augroup configgroup
 
     " Markdown Clipboard Image!
     autocmd FileType markdown nmap <silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
-    
+
     " Disable paste mode when leaving insert mode
     autocmd InsertLeave * set nopaste
 augroup END

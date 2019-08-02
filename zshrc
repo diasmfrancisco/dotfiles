@@ -124,11 +124,16 @@ source $ZSH/oh-my-zsh.sh
 # alias 3='python3.6'
 export PATH="/usr/local/opt/texinfo/bin:$PATH"
 
-# FZF 
+# FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="-- extended"
-export FZF_DEFAULT_COMMAND="fd --type f"
+# export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --smart-case --follow --glob "!.git/*"'
+# export FZF_DEFAULT_COMMAND='if [ -f cscope.files ]; then cat cscope.files; else find ./ -type f ; fi'
+
 export FZF_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+
 
 ######################################################################
 ######################################################################
