@@ -19,3 +19,6 @@ export NOTEX=/Users/fmcdg/Sync/notes
 export VIMCONFIG=~/.vim
 export VIMDATA=~/.vim
 eval "$(rbenv init -)"
+# Configuration for ~/.bash_profile, ~/.zshrc etc:
+# Pipe anything into `clip` to forward it to Clipper
+alias clip="nc localhost 8377"
