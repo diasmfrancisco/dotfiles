@@ -188,6 +188,10 @@ alias advmt="cd ~/Dropbox/study-prep-masters/advanced-mathematics/"
 # source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 # source ~/roles/dotfiles/p10k-lean.zsh
 
+# Configuration for ~/.bash_profile, ~/.zshrc etc:
+# Pipe anything into `clip` to forward it to Clipper
+alias clip="nc localhost 8377"
+
 # Default: Base16 Shell
 BASE16_SHELL=$HOME/roles/dotfiles/config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"

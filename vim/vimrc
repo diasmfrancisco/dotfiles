@@ -101,6 +101,7 @@ let g:templates_search_height=1 " Only search given directory
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Wincent plugins, i.e., Greg Hurrell
+Plug 'wincent/vim-clipper'
 Plug 'wincent/command-t'
 Plug 'wincent/terminus'
 let g:TerminusCursorShape=1
@@ -183,6 +184,8 @@ set visualbell          " blink cursor on error, instead of beeping
 let mapleader=" "
 inoremap jk <esc>
 noremap <Leader>q :q <CR>
+noremap <Leader>w :w <CR>
+noremap <Leader>wq :wq <CR>
 noremap <Leader>o :only <CR>
 
 " move vertically by visual line (don't skip wrapped lines)
@@ -297,7 +300,10 @@ augroup END
 " map <Leader>lp :setlocal paste!<cr>
 
 
-
+" Clipper, wincent
+" Configuration for ~/.vimrc:
+" Bind <leader>y to forward last-yanked text to Clipper
+nnoremap <leader>y :call system('nc localhost 8377', @0)<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Snippets
