@@ -201,3 +201,6 @@ BASE16_SHELL=$HOME/roles/dotfiles/config/base16-shell/
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 eval "$(rbenv init -)"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
