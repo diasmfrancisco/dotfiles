@@ -62,12 +62,14 @@ let g:pandoc#folding#fold_yaml=1 " Default is 0
 Plug 'mbbill/undotree'
 nnoremap <Leader>ut :UndotreeToggle<cr>
 
-" Plug 'SirVer/ultisnips'
+" ----------------------------------------------
+" Snippets
 " Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 Plug 'chrisbra/nrrwrgn'
 
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'lervag/vimtex'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'scrooloose/syntastic'
@@ -90,16 +92,25 @@ let g:airline#extensions#tabline#enabled = 1
 " Tmux bar (via Vim)
 Plug 'edkolev/tmuxline.vim'
 
-" Vim templates, by Adrian Perez
-" Plug 'aperezdc/vim-template'
-" let g:templates_no_autocmd=0
-" let g:templates_directory=['~/roles/dotfiles/vim/templates']
-" let g:templates_no_builtin_templates=0
-" let g:templates_user_variables=[]
-" let g:templates_search_height=1 " Only search given directory
-" " let g:templates_plugin_loaded=0
 
-"""""""""""""""""""""""""""""""""""""""""""""""""
+" ---------------------------------------------------------------
+" Vim templates, by Adrian Perez
+Plug 'aperezdc/vim-template'
+let g:templates_no_autocmd=0
+let g:templates_directory=['~/roles/dotfiles/vim/templates']
+let g:templates_no_builtin_templates=0
+let g:templates_user_variables=[]
+let g:templates_search_height=1 " Only search given directory
+" let g:templates_plugin_loaded=0
+" let g:templates_user_variables = [
+		" \   ['FULLPATH', 'GetFullPath'],
+		" \ ]
+"
+	" function! GetFullPath()
+		" return expand('%:p')
+	" endfunction
+
+" ---------------------------------------------------------------
 " Wincent plugins, i.e., Greg Hurrell
 Plug 'wincent/vim-clipper'
 Plug 'wincent/command-t'
