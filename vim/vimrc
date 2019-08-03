@@ -91,13 +91,13 @@ let g:airline#extensions#tabline#enabled = 1
 Plug 'edkolev/tmuxline.vim'
 
 " Vim templates, by Adrian Perez
-Plug 'aperezdc/vim-template'
-let g:templates_no_autocmd=0
-let g:templates_directory=['~/roles/dotfiles/vim/templates']
-let g:templates_no_builtin_templates=0
-let g:templates_user_variables=[]
-let g:templates_search_height=1 " Only search given directory
-" let g:templates_plugin_loaded=0
+" Plug 'aperezdc/vim-template'
+" let g:templates_no_autocmd=0
+" let g:templates_directory=['~/roles/dotfiles/vim/templates']
+" let g:templates_no_builtin_templates=0
+" let g:templates_user_variables=[]
+" let g:templates_search_height=1 " Only search given directory
+" " let g:templates_plugin_loaded=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Wincent plugins, i.e., Greg Hurrell
