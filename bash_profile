@@ -18,5 +18,4 @@ export LC_ALL=en_US.UTF-8
 export NOTEX=/Users/fmcdg/Sync/notes
 export VIMCONFIG=~/.vim
 export VIMDATA=~/.vim
-export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

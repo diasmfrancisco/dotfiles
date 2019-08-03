@@ -1,51 +1,6 @@
-" Currently not in use
-"set cursorline         " highlight current line
-"set autoread           " autoreload the file in Vim if it has been changed outside of Vim
-set nocompatible
-set cursorline
-
-" enable syntax and plugins for newtr
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete " Omni completion
-syntax enable
-
-" Makefiles, compile current buffer
-" See <https://vim.fandom.com/wiki/Make-compile_current_buffer>
-" set makeprg=gcc\ -o\ %<\ %
-" " Save and make current file.o
-" function! Make()
-  " let curr_dir = expand('%:h')
-  " if curr_dir == ''
-    " let curr_dir = '.'
-  " endif
-  " echo curr_dir
-  " execute 'lcd ' . curr_dir
-  " execute 'make %:r.o'
-  " execute 'lcd -'
-" endfunction
-" nnoremap <Leader>mk :update<CR>:call Make()<CR>
-
-
-" FINDING FILES
-set path+=**      " Provides tab-completion  for all file-related tabs
-set wildmenu      " Display all matching files when we complete tab
-" NOW WE CAN
-" - Hit tab to :find by partial match
-" - Use * to make it fuzzy
-" THINGS TO CONSIDER
-" - :b lets you autocomplete any open buffer
-
-" SHOWING DOTFILES (NETWR)
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-
-" Shortcuts
-" Remap keys to navigate better between windows
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-" Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""
+""" Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
 Plug 'dhruvasagar/vim-table-mode'
@@ -62,15 +17,14 @@ function! s:isAtStartOfLine(mapping)
         inoreabbrev <expr> __
                   \ <SID>isAtStartOfLine('__') ?
                   \ '<c-o>:silent! TableModeDisable<cr>' : '__'
+
 " make table both pandoc and github lovable
 let g:table_mode_separator = '|'
 let g:table_mode_corner = '|'
 let g:table_mode_corner_corner = '|'
 
 Plug 'chriskempson/base16-vim'
-
-Plug '~/.fzf'
-
+" Plug '~/.fzf'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-eunuch'
@@ -82,14 +36,11 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-markdown'
 Plug 'sheerun/vim-polyglot'
 let g:polyglot_disabled = ['latex']
-
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'reedes/vim-pencil'
 Plug 'ferrine/md-img-paste.vim'
-
-" Plug 'wbthomason/buildit.nvim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc-after'
@@ -158,8 +109,36 @@ let g:TerminusNormalCursorShape=0
 let g:TerminusReplaceCursorShape=2
 let g:TerminusBracketedPaste=1
 
-
 call plug#end()
+
+
+
+
+
+set cursorline    " highlight current line
+set autoread      " autoreload the file in Vim if it has been changed outside of Vim
+set nocompatible
+
+filetype plugin on   " enable syntax and plugins for newtr
+syntax enable
+set omnifunc=syntaxcomplete#Complete  " Omni completion
+
+" Y should behave like D and C
+noremap Y y$
+
+" FINDING FILES
+set path+=**      " Provides tab-completion  for all file-related tabs
+set wildmenu      " Display all matching files when we complete tab
+
+" SHOWING DOTFILES (NETWR)
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+
+" Remap keys to navigate better between windows
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 
 syntax on
 colorscheme base16-ocean
@@ -245,7 +224,8 @@ set hlsearch            " highlight matches
 " turn off search highlighting with <CR> (carriage-return)
 nnoremap <CR> :nohlsearch<CR><CR>
 
-
+" Folding
+set foldmethod=indent
 nnoremap <S-Tab> za
 
 """"""""""""""""""""""""""
