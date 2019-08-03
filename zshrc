@@ -196,6 +196,4 @@ BASE16_SHELL=$HOME/roles/dotfiles/config/base16-shell/
 # BASE16_SHELL="$HOME/roles/dotfiles/config/base16-shell/scripts/base16-ocean.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
