@@ -24,6 +24,8 @@ export PATH="/Users/fmcdg/miniconda3/bin:$PATH"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 ZSH_THEME="ys"
+# ZSH_THEME="theunraveler"
+
 
 # Powerlevel stuff
 # POWERLEVEL9K_MODE='awesome-patched'
@@ -192,6 +194,10 @@ alias advmt="cd ~/Dropbox/study-prep-masters/advanced-mathematics/"
 # Pipe anything into `clip` to forward it to Clipper
 alias clip="nc localhost 8377"
 
+# Alias for zathura
+alias zf="zathura --mode fullscreen" # + the file!
+alias zn="zathura" # + the file!
+
 # Default: Base16 Shell
 BASE16_SHELL=$HOME/roles/dotfiles/config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
@@ -199,6 +205,11 @@ BASE16_SHELL=$HOME/roles/dotfiles/config/base16-shell/
 # Ocean profile defaulted
 # BASE16_SHELL="$HOME/roles/dotfiles/config/base16-shell/scripts/base16-ocean.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# Default dark profile defaulted
+# BASE16_SHELL="$HOME/roles/dotfiles/config/base16-shell/scripts/base16-defaut-dark.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 
 eval "$(rbenv init -)"
 

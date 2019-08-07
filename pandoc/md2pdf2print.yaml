@@ -69,7 +69,7 @@ header-includes: |
 
   \newcommand\qed{\hfill\rule{8.00pt}{8.00pt}}
 
-  \setlength{\footskip}{35pt}
+  \setlength{\footskip}{30pt}
 
   \titlespacing{\section}{0pt}{\parskip}{-0.50\parskip}
   \titlespacing{\subsection}{0pt}{\parskip}{-0.75\parskip}

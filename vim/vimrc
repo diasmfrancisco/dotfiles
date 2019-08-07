@@ -60,7 +60,7 @@ let g:pandoc#biblio#bibs = ['~/Sync/masterBib.bib'] " For bib file
 let g:pandoc#folding#fold_yaml=1 " Default is 0
 
 Plug 'mbbill/undotree'
-nnoremap <Leader>ut :UndotreeToggle<cr>
+nnoremap <leader>ut :UndotreeToggle<cr>
 
 " ----------------------------------------------
 " Snippets
@@ -92,7 +92,6 @@ let g:airline#extensions#tabline#enabled = 1
 " Tmux bar (via Vim)
 Plug 'edkolev/tmuxline.vim'
 
-
 " ---------------------------------------------------------------
 " Vim templates, by Adrian Perez
 Plug 'aperezdc/vim-template'
@@ -111,6 +110,10 @@ let g:templates_search_height=1 " Only search given directory
 	" endfunction
 
 " ---------------------------------------------------------------
+" trying out
+" Plug 'malithsen/trello-vim'
+
+" ---------------------------------------------------------------
 " Wincent plugins, i.e., Greg Hurrell
 Plug 'wincent/vim-clipper'
 Plug 'wincent/command-t'
@@ -123,6 +126,9 @@ let g:TerminusBracketedPaste=1
 
 call plug#end()
 
+"""""""""""""""""""""""""""""""""""""""""""""""""
+""" Others
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 
@@ -153,10 +159,9 @@ nnoremap <C-H> <C-W><C-H>
 
 
 syntax on
-colorscheme base16-ocean
-" colorscheme base16-classic-dark
+colorscheme base16-default-dark
 
-set t_ut=                " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
+" set t_ut=                " fix 256 colors in tmux http://sunaku.github.io/vim-256color-bce.html
 
 if has("termguicolors")  " set true colors
     let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
@@ -194,15 +199,14 @@ set visualbell          " blink cursor on error, instead of beeping
 " configure other way to escape, as well as leader key
 let mapleader=" "
 inoremap jk <esc>
-noremap <Leader>q :q <CR>
-noremap <Leader>w :w <CR>
-noremap <Leader>wq :wq <CR>
-noremap <Leader>o :only <CR>
+noremap <leader>q :q <CR>
+noremap <leader>w :w <CR>
+noremap <leader>wq :wq <CR>
+noremap <leader>o :only <CR>
 
 " move vertically by visual line (don't skip wrapped lines)
 nmap j gj
 nmap k gk
-
 
 """"""""""""""""""""""""""
 """" Vim Appearance
@@ -239,7 +243,7 @@ set hlsearch            " highlight matches
 nnoremap <CR> :nohlsearch<CR><CR>
 
 " Folding
-set foldmethod=indent
+set foldmethod=marker
 nnoremap <S-Tab> za
 
 """"""""""""""""""""""""""
@@ -247,8 +251,8 @@ nnoremap <S-Tab> za
 """ Other behavior
 
 " Tabularize, for LaTeX, with ampersands!
-nnoremap <Leader>a :Tabularize /&<CR>
-vnoremap <Leader>a :Tabularize /&<CR>
+nnoremap <leader>a :Tabularize /&<CR>
+vnoremap <leader>a :Tabularize /&<CR>
 
 
 """"""""""""""""""""""""""
@@ -273,7 +277,7 @@ vnoremap <Leader>a :Tabularize /&<CR>
 " Don't close preview tab when switching to other buffers
 "let g:mkdp_auto_close = 0
 
-nnoremap <Leader>mm :MarkdownPreview<CR>
+nnoremap <leader>mm :MarkdownPreview<CR>
 
 
 """"""""""""""""""""""""""
@@ -283,18 +287,44 @@ nnoremap <Leader>mm :MarkdownPreview<CR>
 let g:mdip_imgdir                      = 'image-assets'
 " let g:mdip_imgname                   = 'image'
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VIMTEX
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Vimtex configurations
+" Before
+
 " LaTeX
 
-let g:tex_flavor                       = 'latex'
-let g:tex_conceal                      = ''
-let g:vimtex_fold_manual               = 1
-let g:vimtex_latexmk_continuous        = 1
-let g:vimtex_compiler_progname         = 'nvr'
-" use SumatraPDF if you are on Windows
-let g:vimtex_view_method               = 'skim'
+let g:tex_flavor                 = 'latex'
+let g:tex_conceal                = ''
+let g:vimtex_fold_manual         = 1
+let g:vimtex_latexmk_continuous  = 1
+let g:vimtex_compiler_progname   = 'nvr'
+let g:vimtex_view_method         = 'skim'
+let g:vimtex_quickfix_mode       = 0
+" set conceallevel                 = 1
+let g:tex_conceal                = 'abdmg'
+
+" FOLLOWING <https://castel.dev/post/lecture-notes-1/>
+" let g:vimtex_view_method         = 'zathura'
+
+
+
+
+
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Others
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " NERDtree
-nnoremap <Leader>n :NERDTreeToggle<Enter>
+nnoremap <leader>n :NERDTreeToggle<Enter>
 let NERDTreeQuitOnOpen = 1
 
 " Turn off auto-insert
@@ -308,7 +338,7 @@ augroup END
 
 " Toggle paste mode on and off
 " Not needed with terminus?
-" map <Leader>lp :setlocal paste!<cr>
+" map <leader>lp :setlocal paste!<cr>
 
 
 " Clipper, wincent
@@ -324,9 +354,6 @@ let g:UltiSnipsExpandTrigger       = '<tab>'
 let g:UltiSnipsJumpForwardTrigger  = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-let g:vimtex_quickfix_mode         = 0
-" set conceallevel                   = 1
-let g:tex_conceal                  = 'abdmg'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
@@ -344,15 +371,10 @@ let g:syntastic_check_on_wq              = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pencil
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
-
-" see more on the autogroup section below
-
-""""""""""""""""""""""""""
 " Writing optionS! Goyo, Limelight, and Vim-Pencil
 
-nnoremap <Leader>gg :Goyo<CR>
-nnoremap <Leader>pp :TogglePencil<CR>
+nnoremap <leader>gg :Goyo<CR>
+nnoremap <leader>pp :TogglePencil<CR>
 let g:limelight_conceal_ctermfg = 240
 
  " Pencil / Writing Controls {{{
@@ -366,27 +388,39 @@ let g:pencil#softDetectSample    = 20
 let g:pencil#softDetectThreshold = 130
  " }}}
 
+ "
+ " SPELLING and RELATED
  " Spell check
  " For those with sadly no function keys available
  " toggle spelling use \s
- nnoremap <Leader>ss :setlocal spell! spelllang=en_us<CR>
+ nnoremap <leader>ss :setlocal spell! spelllang=en_us<CR>
 
 " set spelllang=en_us ",en_gb
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+" Don't mark URL-like things as spelling errors
+ syn match UrlNoSpell '\w\+:\/\/[^[:space:]]\+' contains=@NoSpell
+
+ " Don't count acronyms / abbreviations as spelling errors
+ " (all upper-case letters, at least three characters)
+ " Also will not count acronym with 's' at the end a spelling error
+ " Also will not count numbers that are part of this
+ " Recognizes the following as correct:
+ syn match AcronymNoSpell '\<\(\u\|\d\)\{3,}s\?\>' contains=@NoSpell
 
 " Set spellfile to location that is guaranteed to exist,
 " can be symlinked to Dropbox or kept in Git
 " and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=~/roles/dotfiles/vim/vim-spell-en.utf-8.add
 
- nmap <Leader>hh :if exists("g:syntax_on") <Bar>
+ nmap <leader>hh :if exists("g:syntax_on") <Bar>
 	\   syntax off <Bar>
 	\ else <Bar>
 	\   syntax enable <Bar>
 	\ endif <CR>
 
  " Stop the damned highlighting which is left in the register!
- nnoremap <Leader>h :let @/=""<CR>
+ nnoremap <leader>h :let @/=""<CR>
 
 
 
@@ -395,7 +429,7 @@ set spellfile=~/roles/dotfiles/vim/vim-spell-en.utf-8.add
 " Custom Mappings
 """""""""""""""""""""""""""""""""""""""""""""
 " for file fuzzy finder, within vim
-nnoremap <Leader>fz :FZF<Enter>
+nnoremap <leader>fz :FZF<Enter>
 
 
 """""""""""""""""""""""""""""""""""""""""""""
