@@ -4,7 +4,7 @@
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "# Insert your preferred key mappings here.\n\n\n# Scrolling Down\nmap <c-d> scrollPageDown\nunmap d\nunmap <c-e>\n\n\n# Scrolling Up\nmap <c-u> scrollPageUp\nunmap u\nunmap <c-y>\n\n# Pinning\nunmap <a-p>\nmap <a-π> togglePinTab\n\n# Help\nunmap ?\nmap :h showHelp\n\n# Search\nmap ? enterFindMode\n\n# Incognito\nmap <c-f> LinkHints.activateModeToOpenIncognito\n\n# Muting tabs\nunmap <a-m>\nmap <C-m> toggleMuteTab",
+  "keyMappings": "# Insert your preferred key mappings here.\n\n\n# Scrolling Down\nmap <c-d> scrollPageDown\nunmap d\nunmap <c-e>\n\n\n# Scrolling Up\nmap <c-u> scrollPageUp\nunmap u\nunmap <c-y>\n\n# Pinning\nunmap <a-p>\n# map <a-π> togglePinTab\nmap <c-p> togglePinTab\n\n# Help\nunmap ?\nmap :h showHelp\n\n# Search\nmap ? enterFindMode\n\n# Incognito\nmap <c-f> LinkHints.activateModeToOpenIncognito\n\n# Muting tabs\nunmap <a-m>\nmap <C-m> toggleMuteTab",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",

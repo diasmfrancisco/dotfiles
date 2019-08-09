@@ -116,7 +116,7 @@ let g:templates_search_height=1 " Only search given directory
 " ---------------------------------------------------------------
 " Wincent plugins, i.e., Greg Hurrell
 Plug 'wincent/vim-clipper'
-Plug 'wincent/command-t'
+" Plug 'wincent/command-t'
 Plug 'wincent/terminus'
 let g:TerminusCursorShape=1
 let g:TerminusInsertCursorShape=1
@@ -131,8 +131,6 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 
-
-
 set cursorline    " highlight current line
 set autoread      " autoreload the file in Vim if it has been changed outside of Vim
 set nocompatible
@@ -142,7 +140,11 @@ syntax enable
 set omnifunc=syntaxcomplete#Complete  " Omni completion
 
 " Y should behave like D and C
-noremap Y y$
+nnoremap Y y$
+
+" Pandoc mappings
+nnoremap <localleader>P :Pandoc! #notesPrint<CR>
+nnoremap <localleader>p :Pandoc! #myNotes<CR>
 
 " FINDING FILES
 set path+=**      " Provides tab-completion  for all file-related tabs
@@ -203,6 +205,13 @@ noremap <leader>q :q <CR>
 noremap <leader>w :w <CR>
 noremap <leader>wq :wq <CR>
 noremap <leader>o :only <CR>
+
+" mappings for buffers
+noremap <leader>bl :ls <CR>
+noremap <leader>bn :bn <CR>
+noremap <leader>bh :b# <CR>
+noremap <leader>bd :bd <CR>
+
 
 " move vertically by visual line (don't skip wrapped lines)
 nmap j gj

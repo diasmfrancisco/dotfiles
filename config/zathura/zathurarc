@@ -49,4 +49,4 @@ set window-title-basename true
 
 # WINDOW SIZE (default is 600x800 for HeightxWidth)
 set window-height 1025
-set window-width 1145
+set window-width 1120

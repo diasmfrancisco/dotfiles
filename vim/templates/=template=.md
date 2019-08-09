@@ -1,7 +1,7 @@
 ---
 # -----------------------
 # Options: paper, article, scrartcl, memoir, etc...
-documentclass : paper
+documentclass : article
 
 # -----------------------
 # date: \today{}
@@ -14,10 +14,15 @@ title: "Notes"
 subtitle: \today{}
 ...
 
-\begin{comment}
 \pagenumbering{gobble}
+
+\begin{comment}
 \clearpage
 \pagenumbering{arabic}
+\end{comment}
+
+\begin{comment}
+\vspace*{-45pt}
 \end{comment}
 
 <!-- COMMENT -->
