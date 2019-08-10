@@ -1,0 +1,31 @@
+{
+  "title": "Change Caps Lock key functionality (fmcdg)",
+  "rules": [
+    {
+      "description": "New Caps Lock functionality: press for escape key, use as control if pressed with others.",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_control"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "escape"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

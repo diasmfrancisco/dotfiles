@@ -212,6 +212,8 @@ noremap <leader>bn :bn <CR>
 noremap <leader>bh :b# <CR>
 noremap <leader>bd :bd <CR>
 
+" JSON autoformat
+noremap <leader>js :%!python -m json.tool <CR>
 
 " move vertically by visual line (don't skip wrapped lines)
 nmap j gj
