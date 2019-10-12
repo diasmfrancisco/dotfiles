@@ -3,21 +3,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
+Plug 'mattly/vim-markdown-enhancements'
 Plug 'dhruvasagar/vim-table-mode'
-function! s:isAtStartOfLine(mapping)
-      let text_before_cursor = getline('.')[0 : col('.')-1]
-        let mapping_pattern = '\V' . escape(a:mapping, '\')
-          let comment_pattern = '\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
-            return (text_before_cursor =~? '^' . ('\v(' . comment_pattern . '\v)?') . '\s*\v' . mapping_pattern . '\v$')
-        endfunction
-
-        inoreabbrev <expr> <bar><bar>
-                  \ <SID>isAtStartOfLine('\|\|') ?
-                  \ '<c-o>:TableModeEnable<cr><bar><space><bar><left><left>' : '<bar><bar>'
-        inoreabbrev <expr> __
-                  \ <SID>isAtStartOfLine('__') ?
-                  \ '<c-o>:silent! TableModeDisable<cr>' : '__'
-
 " make table both pandoc and github lovable
 let g:table_mode_separator = '|'
 let g:table_mode_corner = '|'
@@ -25,7 +12,7 @@ let g:table_mode_corner_corner = '|'
 
 Plug 'chriskempson/base16-vim'
 " Plug '~/.fzf'
-Plug 'junegunn/vim-easy-align'
+" Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
@@ -34,8 +21,8 @@ Plug 'tpope/vim-fugitive'
 " Markdown and pandoc; writing in general
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-markdown'
-Plug 'sheerun/vim-polyglot'
-let g:polyglot_disabled = ['latex']
+" Plug 'sheerun/vim-polyglot'
+" let g:polyglot_disabled = ['latex']
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -84,11 +71,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-" Plug 'itchyny/lightline.vim'
-" let g:lightline = {
-      " \ 'colorscheme': 'jellybeans',
-      " \ }
-
 " Tmux bar (via Vim)
 Plug 'edkolev/tmuxline.vim'
 
@@ -115,7 +97,7 @@ let g:templates_search_height=1 " Only search given directory
 
 " ---------------------------------------------------------------
 " Wincent plugins, i.e., Greg Hurrell
-Plug 'wincent/vim-clipper'
+" Plug 'wincent/vim-clipper'
 " Plug 'wincent/command-t'
 Plug 'wincent/terminus'
 let g:TerminusCursorShape=1
@@ -141,6 +123,7 @@ set omnifunc=syntaxcomplete#Complete  " Omni completion
 
 " Y should behave like D and C
 nnoremap Y y$
+nnoremap <localleader>m :!mv %<.pdf ~/Downloads/ <CR>
 
 " Pandoc mappings
 nnoremap <localleader>P :Pandoc! #notesPrint<CR>
@@ -205,6 +188,7 @@ noremap <leader>q :q <CR>
 noremap <leader>w :w <CR>
 noremap <leader>wq :wq <CR>
 noremap <leader>o :only <CR>
+noremap <leader>so :source ~/.vimrc <CR>
 
 " mappings for buffers
 noremap <leader>bl :ls <CR>
@@ -241,7 +225,7 @@ set shiftwidth=4        " number of spaces to use for each step of (auto)indent
 set softtabstop=4       " backspace after pressing <TAB> will remove up to this many spaces
 
 set autoindent          " copy indent from current line when starting a new line
-set smartindent         " even better autoindent (e.g. add indent after '{')
+" set smartindent         " even better autoindent (e.g. add indent after '{')
 
 
 """"""""""""""""""""""""""
@@ -390,13 +374,13 @@ let g:limelight_conceal_ctermfg = 240
 
  " Pencil / Writing Controls {{{
 let g:pencil#wrapModeDefault     = 'soft'
-let g:pencil#textwidth           = 75
+let g:pencil#textwidth           = 5
 let g:pencil#joinspaces          = 0
 let g:pencil#cursorwrap          = 1
 let g:pencil#conceallevel        = 2
 let g:pencil#concealcursor       = 'c'
-let g:pencil#softDetectSample    = 20
-let g:pencil#softDetectThreshold = 130
+" let g:pencil#softDetectSample    = 20
+" let g:pencil#softDetectThreshold = 130
  " }}}
 
  "
@@ -463,8 +447,7 @@ augroup configgroup
     autocmd BufWrite * :%s/\s\+$//e
 
     " Pencil
-    autocmd FileType markdown call pencil#init()
-    autocmd FileType text     call pencil#init({'wrap': 'hard'})
+    autocmd FileType markdown call pencil#init({'wrap': 'soft'})
 
     " automatically close if NERDtree is only left standing
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

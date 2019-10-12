@@ -65,11 +65,11 @@ header-includes: |
 
   \setlength{\footskip}{30pt}
 
-  \setlength{\parskip}{6.00pt}
-
-  \titlespacing{\section}{1pt}{\parskip}{0.00\parskip}
-  \titlespacing{\subsection}{0.5pt}{\parskip}{-0.75\parskip}
+  \titlespacing{\section}{0pt}{\parskip}{-0.50\parskip}
+  \titlespacing{\subsection}{0pt}{\parskip}{-0.75\parskip}
   \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+
+  \setlength{\parskip}{6.00pt}
 
   \setlist{nosep}
 
